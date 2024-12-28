@@ -1,16 +1,42 @@
 {
-  "name": "Canvas",
+  "name": "Canvas Theme",
   "authors": "Manuel Kostka",
-  "about_url": "TODO: Put your theme's public repo or Meta topic URL here",
-  "license_url": "TODO: Put your theme's LICENSE URL here",
-  "learn_more": "TODO",
+  "about_url": "",
+  "license_url": "",
+  "learn_more": "",
   "theme_version": "0.0.1",
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
-  "assets": {
-  },
-  "modifiers": {
-  },
+  "assets": {},
+  "modifiers": {},
   "color_schemes": {
-  }
+    "Canvas Light": {
+      "primary": "222222",
+      "secondary": "ffffff",
+      "tertiary": "0088cc",
+      "quaternary": "e45735",
+      "header_background": "ffffff",
+      "header_primary": "333333",
+      "highlight": "ffff4d",
+      "selected": "d1f0ff",
+      "hover": "f2f2f2"
+    },
+    "Canvas Dark": {
+      "primary": "dddddd",
+      "secondary": "222222",
+      "tertiary": "099dd7",
+      "quaternary": "c14924",
+      "header_background": "111111",
+      "header_primary": "dddddd",
+      "highlight": "a87137",
+      "selected": "052e3d",
+      "hover": "313131"
+    }
+  },
+  "components": [
+    "https://gitlab.com/manuelkostka/discourse/canvas/component.git",
+    "https://gitlab.com/manuelkostka/discourse/components/extra-banners.git",
+    "https://github.com/discourse/discourse-category-banners.git",
+    "https://github.com/discourse/discourse-tag-banners.git"
+  ]
 }

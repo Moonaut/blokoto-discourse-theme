@@ -1,0 +1,57 @@
+/* Custom properties and their default values */
+:root {
+  /* Layout */
+  // --d-max-width: 1110px;
+  // --canvas-nav-space: 0.75rem;
+  // --canvas-content-padding: 1.5rem;
+  // --canvas-topic-list-padding: 0.8em;
+
+  /* Base Styles */
+  // --canvas-background: var(--secondary);
+  // --canvas-border: 1px solid var(--primary-500);
+  // --canvas-border-light: 1px solid var(--primary-200);
+
+  /* Border Radius */
+  // --d-border-radius: 2px;
+  // --d-border-radius-large: 2px;
+  // --d-button-border-radius: 2px;
+  // --d-input-border-radius: var(--d-button-border-radius);
+  // --d-nav-pill-border-radius: var(--d-button-border-radius);
+
+  /* Button Styles */
+  // --canvas-button-padding: 0.5em 0.65em;
+  // --canvas-button-primary-padding: 0.5em 0.65em;
+
+  /* Header */
+  // --canvas-header-height: 4rem;
+  // --canvas-header-background: var(--header_background);
+  // --canvas-header-border: none;
+  // --canvas-header-shadow: var(--shadow-header);
+
+  /* Sidebar */
+  // --d-sidebar-width: 17em;
+  // --d-sidebar-background: var(--secondary);
+  // --canvas-sidebar-border: 1px solid var(--primary-low);
+  // --canvas-sidebar-scrollbar: var(--scrollbarWidth);
+  // --d-sidebar-row-height: 2.2em;
+  // --d-sidebar-highlight-background: var(--primary-low);
+
+  /* Panels */
+  // --canvas-panel-background: var(--secondary);
+  // --canvas-panel-padding: 1rem 2rem;
+  // --canvas-panel-radius: var(--d-border-radius-large);
+  // --canvas-panel-border: none;
+  // --canvas-panel-shadow: var(--shadow-header);
+
+  /* Banners */
+  // --canvas-banner-color: var(--primary);
+  // --canvas-banner-background: var(--secondary);
+  // --canvas-banner-padding: 1rem 2rem 1.5rem;
+  // --canvas-banner-radius: var(--d-border-radius-large);
+  // --canvas-banner-border: none;
+  // --canvas-banner-shadow: var(--shadow-header);
+
+  /* Header Search */
+  // --canvas-header-search-padding: 0.5em;
+  // --canvas-header-search-border: 1px solid var(--primary-400);
+}
