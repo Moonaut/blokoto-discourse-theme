@@ -1,11 +1,10 @@
 # Canvas Theme Template
 
-## Component settings
+Kickstart your custom theme design with a pre-made template.
 
-The template installs various theme components by default. The settings of the following components need to be adjusted manually.
+![Canvas Theme Template - Cover](assets/Cover.png)
 
-- **Category Banners**: plugin outlet -> above-main-container
-- **Tag Banners**: plugin outlet -> above-main-container
+Discussion, feedback and more info: https://meta.discourse.org/t//352730
 
 ## Custom properties
 
