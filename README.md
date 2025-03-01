@@ -4,7 +4,7 @@ Kickstart your custom theme design with a pre-made template.
 
 ![Canvas Theme Template - Cover](assets/Cover.png)
 
-Discussion, feedback and more info: https://meta.discourse.org/t//352730
+Discussion, feedback and more info: https://meta.discourse.org/t/352730
 
 ## Custom properties
 
