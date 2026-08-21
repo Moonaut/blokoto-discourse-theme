@@ -21,7 +21,7 @@ const FILTERS = ["hot", "latest", "top"];
   args: {
     title: { type: "string" },
     count: { type: "number", default: 6 },
-    defaultFilter: { type: "string", oneOf: FILTERS, default: "hot" },
+    defaultFilter: { type: "string", enum: FILTERS, default: "hot" },
   },
 })
 export default class BlockActivityList extends Component {
