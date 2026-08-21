@@ -1,0 +1,73 @@
+pt_BR:
+  theme_metadata:
+    description: "Tema da comunidade Blokoto: homepage customizada orientada a intenção, sem sidebar permanente."
+    settings:
+      hero_play_url: "URL do botão 'Jogar agora' no hero."
+      hero_signup_url: "URL do botão de criar conta."
+      hero_video_url: "URL de um arquivo de vídeo (.mp4/.webm) do trailer. Deixe vazio para usar só a imagem."
+      hero_poster_url: "Imagem de capa do trailer, usada como poster do vídeo ou sozinha."
+      release_tag: "Tag usada nos tópicos de release. Alimenta o campo 'último update'."
+      show_online_now: "Exibe 'online agora'. Requer o plugin discourse-whos-online; sem ele o campo é omitido."
+      support_category_id: "ID da categoria de suporte."
+      suggestions_category_id: "ID da categoria de sugestões."
+      bugs_category_id: "ID da categoria de bugs."
+      roadmap_url: "Destino do cartão 'O que vem aí'."
+      activity_count: "Quantos tópicos exibir no feed principal."
+      activity_default_filter: "Aba aberta por padrão no feed principal."
+      blokreations_tag: "Tag que identifica as criações da comunidade."
+      blokreations_count: "Quantas criações exibir na galeria."
+      show_back_link: "Exibe a seta de retorno à homepage nas páginas internas."
+
+  navigation:
+    back_home: "Voltar ao início"
+
+  homepage:
+    hero:
+      title: "Crie, jogue e compartilhe mundos no Blokoto"
+      subtitle: "A comunidade oficial de jogadores e criadores. Tire dúvidas, mostre o que fez e ajude a decidir o que vem no próximo update."
+      play: "Jogar agora"
+      signup: "Criar conta grátis"
+
+    welcome:
+      greeting: "Que bom te ver, %{name}"
+      new_topic: "Criar tópico"
+      unread: "Não lidos"
+
+    stats:
+      members: "membros"
+      online: "online agora"
+      active: "ativos na semana"
+      posts: "posts na semana"
+      release: "último update"
+
+    intents:
+      title: "Por onde começar"
+      topic_count:
+        one: "%{count} tópico"
+        other: "%{count} tópicos"
+      help: "Preciso de ajuda"
+      help_meta: "Suporte da equipe"
+      idea: "Tenho uma ideia"
+      idea_meta: "Sugestões da comunidade"
+      bug: "Achei um bug"
+      bug_meta: "Reporte um problema"
+      roadmap: "O que vem aí"
+      roadmap_meta: "Roadmap público"
+
+    activity:
+      title: "Na comunidade"
+      replies:
+        one: "resposta"
+        other: "respostas"
+      tabs:
+        hot: "Em alta"
+        latest: "Recentes"
+        top: "Melhores"
+
+    categories:
+      title: "Categorias"
+      link_text: "ver todas"
+
+    blokreations:
+      title: "Blokreations da semana"
+      link_text: "ver tudo"

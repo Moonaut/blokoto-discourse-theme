@@ -1,0 +1,28 @@
+.block-welcome-strip {
+  &__layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    background-color: var(--blokoto-surface);
+    border-radius: var(--d-border-radius);
+  }
+
+  &__identity {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  &__greeting {
+    font-size: var(--font-up-1);
+    font-weight: 700;
+  }
+
+  &__actions {
+    display: flex;
+    gap: var(--space-2);
+  }
+}

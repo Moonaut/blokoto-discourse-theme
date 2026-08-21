@@ -1,0 +1,47 @@
+.homepage-blocks {
+  &__layout {
+    display: grid;
+    gap: var(--space-5);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "hero-head"
+      "stats-bar"
+      "intents"
+      "activity"
+      "homepage-side"
+      "blokreations";
+    margin-block: var(--space-5) var(--space-8);
+  }
+
+  @container homepage-blocks (width > 900px) {
+    &__layout {
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas:
+        "hero-head hero-head"
+        "stats-bar stats-bar"
+        "intents intents"
+        "activity homepage-side"
+        "blokreations blokreations";
+    }
+  }
+
+  &__block {
+    &--stats-bar { grid-area: stats-bar; }
+    &--intents { grid-area: intents; }
+    &--activity { grid-area: activity; }
+    &--blokreations { grid-area: blokreations; }
+  }
+
+  &__block-container {
+    &--hero-head { grid-area: hero-head; }
+
+    &--homepage-side {
+      grid-area: homepage-side;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+
+      &:empty { display: none; }
+    }
+  }
+}

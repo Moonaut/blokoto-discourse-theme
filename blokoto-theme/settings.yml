@@ -1,0 +1,67 @@
+hero_play_url:
+  default: "https://blokoto.com/play"
+  type: string
+
+hero_signup_url:
+  default: "/signup"
+  type: string
+
+hero_video_url:
+  default: ""
+  type: string
+
+hero_poster_url:
+  default: ""
+  type: string
+
+release_tag:
+  default: "release"
+  type: string
+
+show_online_now:
+  default: false
+  type: bool
+
+support_category_id:
+  default: 0
+  type: integer
+
+suggestions_category_id:
+  default: 0
+  type: integer
+
+bugs_category_id:
+  default: 0
+  type: integer
+
+roadmap_url:
+  default: "/tag/roadmap"
+  type: string
+
+activity_count:
+  default: 6
+  type: integer
+  min: 3
+  max: 20
+
+activity_default_filter:
+  default: "hot"
+  type: enum
+  choices:
+    - hot
+    - latest
+    - top
+
+blokreations_tag:
+  default: "creation:avatar"
+  type: string
+
+blokreations_count:
+  default: 4
+  type: integer
+  min: 2
+  max: 8
+
+show_back_link:
+  default: true
+  type: bool

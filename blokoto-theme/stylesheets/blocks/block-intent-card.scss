@@ -1,0 +1,31 @@
+.block-intent-card {
+  &__layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--blokoto-card-padding);
+    border: 1px solid var(--primary-low);
+    border-radius: var(--d-border-radius);
+    color: var(--primary);
+    transition: border-color 0.15s ease;
+
+    &:hover {
+      border-color: var(--tertiary);
+      color: var(--primary);
+    }
+  }
+
+  &__icon {
+    color: var(--tertiary);
+    font-size: var(--font-up-2);
+  }
+
+  &__label {
+    font-weight: 700;
+  }
+
+  &__meta {
+    font-size: var(--font-down-1);
+    color: var(--primary-medium);
+  }
+}

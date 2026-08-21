@@ -1,0 +1,73 @@
+en:
+  theme_metadata:
+    description: "Blokoto community theme: intent-driven custom homepage, no persistent sidebar."
+    settings:
+      hero_play_url: "URL for the 'Play now' hero button."
+      hero_signup_url: "URL for the sign-up button."
+      hero_video_url: "URL of a trailer video file (.mp4/.webm). Leave empty to show only the poster image."
+      hero_poster_url: "Trailer cover image, used as the video poster or on its own."
+      release_tag: "Tag used on release topics. Feeds the 'latest update' stat."
+      show_online_now: "Show 'online now'. Requires the discourse-whos-online plugin; omitted without it."
+      support_category_id: "Support category ID."
+      suggestions_category_id: "Suggestions category ID."
+      bugs_category_id: "Bugs category ID."
+      roadmap_url: "Destination of the 'What's next' card."
+      activity_count: "How many topics to show in the main feed."
+      activity_default_filter: "Tab opened by default in the main feed."
+      blokreations_tag: "Tag identifying community creations."
+      blokreations_count: "How many creations to show in the gallery."
+      show_back_link: "Show the back-to-home link on inner pages."
+
+  navigation:
+    back_home: "Back to home"
+
+  homepage:
+    hero:
+      title: "Build, play and share worlds in Blokoto"
+      subtitle: "The official community for players and creators. Ask questions, show what you made, and help decide what ships next."
+      play: "Play now"
+      signup: "Create a free account"
+
+    welcome:
+      greeting: "Good to see you, %{name}"
+      new_topic: "New topic"
+      unread: "Unread"
+
+    stats:
+      members: "members"
+      online: "online now"
+      active: "active this week"
+      posts: "posts this week"
+      release: "latest update"
+
+    intents:
+      title: "Where to start"
+      topic_count:
+        one: "%{count} topic"
+        other: "%{count} topics"
+      help: "I need help"
+      help_meta: "Team support"
+      idea: "I have an idea"
+      idea_meta: "Community suggestions"
+      bug: "I found a bug"
+      bug_meta: "Report a problem"
+      roadmap: "What's next"
+      roadmap_meta: "Public roadmap"
+
+    activity:
+      title: "In the community"
+      replies:
+        one: "reply"
+        other: "replies"
+      tabs:
+        hot: "Hot"
+        latest: "Latest"
+        top: "Top"
+
+    categories:
+      title: "Categories"
+      link_text: "see all"
+
+    blokreations:
+      title: "Blokreations of the week"
+      link_text: "see all"
