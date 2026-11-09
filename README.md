@@ -112,7 +112,7 @@ instance.
 ```bash
 gem install discourse_theme
 
-export DISCOURSE_URL=http://localhost:8085
+export DISCOURSE_URL=http://localhost:8081
 export DISCOURSE_API_KEY=your_admin_api_key
 
 discourse_theme watch DiscourseTheme
