@@ -1,0 +1,11 @@
+// Solar Icons are drawn with strokes. The sprite deliberately carries no
+// stroke-width so this variable can retune every line icon at once; filled
+// (bold) glyphs ignore it. The initializer overrides the default from the
+// stroke_width setting.
+:root {
+  --solar-icons-stroke-width: 1.5;
+}
+
+svg.d-icon {
+  stroke-width: var(--solar-icons-stroke-width);
+}

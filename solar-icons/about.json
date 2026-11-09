@@ -1,0 +1,13 @@
+{
+  "name": "Solar Icons",
+  "description": "Replaces Discourse icons with the Solar icon set",
+  "component": true,
+  "authors": "Blokoto",
+  "about_url": "https://solar-icons.dev/docs/v2",
+  "license_url": "https://github.com/saoudi-h/solar-icons/blob/main/LICENSE-THIRD-PARTY",
+  "theme_version": "0.1.0",
+  "minimum_discourse_version": "2026.10.0",
+  "assets": {
+    "icons-sprite": "/assets/icons-sprite.svg"
+  }
+}

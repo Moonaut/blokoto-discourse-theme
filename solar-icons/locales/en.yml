@@ -1,0 +1,7 @@
+en:
+  theme_metadata:
+    description: "Solar icons for Discourse"
+    settings:
+      icon_style: "Line icons (<code>linear</code>) or solid glyphs (<code>bold</code>). Bold ignores stroke width."
+      stroke_width: "Line thickness for outlined (<code>linear</code>) icons, in pixels."
+      ignored_icons: "Keep the default Font Awesome icon for these names. Separate multiple names with <code>|</code>, for example <code>heart|star</code>."

@@ -1,0 +1,7 @@
+pt_BR:
+  theme_metadata:
+    description: "Ícones Solar para o Discourse"
+    settings:
+      icon_style: "Ícones de linha (<code>linear</code>) ou sólidos (<code>bold</code>). O estilo sólido ignora a espessura do traço."
+      stroke_width: "Espessura do traço dos ícones de linha (<code>linear</code>), em pixels."
+      ignored_icons: "Mantém o ícone padrão do Font Awesome para estes nomes. Separe vários nomes com <code>|</code>, por exemplo <code>heart|star</code>."

@@ -1,0 +1,24 @@
+icon_style:
+  default: linear
+  type: enum
+  refresh: true
+  choices:
+    - linear
+    - bold
+
+stroke_width:
+  default: "1.5"
+  type: enum
+  refresh: true
+  choices:
+    - "1"
+    - "1.25"
+    - "1.5"
+    - "1.75"
+    - "2"
+
+ignored_icons:
+  default: ""
+  type: list
+  list_type: compact
+  refresh: true
