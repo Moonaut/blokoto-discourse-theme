@@ -27,8 +27,8 @@ purpose: get people into current discussions.
   island and the sidebar are independent scroll containers; the page chrome stays
   put.
 - **Transparent, borderless navbar.** The header is navigation only: no fill, no
-  border, no card. It stays above the scrollable main island, so it never sits over
-  moving content with a see-through background.
+  border, no card, and **56px tall** to match the Frontend's `h-14` navbar. It
+  stays above the scrollable main island.
 - **Content before chrome.** No gradients, nested cards, icon/heading/text tiles,
   or decorative stat blocks. Hierarchy comes from type, spacing, and one rule
   between sections.
@@ -83,6 +83,8 @@ homepage. The rest of the sidebar is Discourse's normal navigation.
 - The main island is `overflow-y: auto`; the homepage uses the same rule on
   `.blokoto-home`. The sidebar scrolls independently.
 - The header is `position: relative` with a transparent background and no border.
+- `--t-Blokoto-header-height` is `3.5rem` (56px) on desktop and mobile, matching
+  the Frontend navbar; the 8px gap below it is separate.
 - The homepage uses a single full-width surface; its intro is a two-column
   editorial split at desktop (copy left, actions right) and a single column on
   mobile.
