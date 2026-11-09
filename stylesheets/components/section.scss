@@ -1,0 +1,79 @@
+.blokoto-section {
+  &__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+
+  &__heading {
+    min-width: 0;
+  }
+
+  &__eyebrow {
+    margin: 0 0 var(--space-2);
+    color: var(--t-Blokoto-color-text-accent);
+    font-family: var(--d-font-family--monospace);
+    font-size: var(--font-down-2);
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin: 0;
+    color: var(--t-Blokoto-color-text-default);
+    font-size: clamp(1.65rem, 3.2vw, 2.65rem);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+  }
+
+  &__subtitle {
+    max-width: 52ch;
+    margin: var(--space-2) 0 0;
+    color: var(--t-Blokoto-color-text-muted);
+    font-size: var(--font-up-0);
+    line-height: 1.55;
+  }
+
+  &__link {
+    display: inline-flex;
+    flex-shrink: 0;
+    gap: 0.35rem;
+    align-items: center;
+    padding: 0.55rem 0.9rem;
+    color: var(--t-Blokoto-color-text-default);
+    font-size: var(--font-down-1);
+    font-weight: 600;
+    text-decoration: none;
+    background: var(--t-Blokoto-color-background-raised);
+    border: 1px solid var(--t-Blokoto-color-border-default);
+    border-radius: 999px;
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease,
+      transform 150ms ease;
+
+    .d-icon {
+      color: var(--t-Blokoto-color-text-accent);
+      font-size: 0.8em;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: var(--t-Blokoto-color-text-default);
+      background: var(--t-Blokoto-color-background-hover);
+      border-color: var(--t-Blokoto-color-border-strong);
+      transform: translateX(2px);
+    }
+  }
+}
+
+@include container.until(md, homepage-blocks) {
+  .blokoto-section__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

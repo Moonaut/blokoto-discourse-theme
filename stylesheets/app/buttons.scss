@@ -1,0 +1,76 @@
+.btn {
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+.btn-primary {
+  background: var(--t-Blokoto-color-button-background);
+  border-color: var(--t-Blokoto-color-text-accent);
+  color: var(--t-Blokoto-color-text-inverse);
+
+  .d-icon {
+    color: currentcolor;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: var(--t-Blokoto-color-button-background-hovered);
+    border-color: var(--t-Blokoto-color-button-background-hovered);
+    color: var(--t-Blokoto-color-text-inverse);
+  }
+}
+
+.btn-default {
+  background: var(--t-Blokoto-color-background-raised);
+  border-color: var(--t-Blokoto-color-border-default);
+  color: var(--t-Blokoto-color-text-default);
+
+  &:hover,
+  &:focus-visible {
+    background: var(--t-Blokoto-color-background-hover);
+    border-color: var(--t-Blokoto-color-border-strong);
+    color: var(--t-Blokoto-color-text-default);
+  }
+}
+
+.btn-flat {
+  color: var(--t-Blokoto-color-text-muted);
+
+  &:hover,
+  &:focus-visible {
+    background: var(--t-Blokoto-color-background-hover);
+    color: var(--t-Blokoto-color-text-default);
+  }
+}
+
+.btn-danger {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: var(--t-Blokoto-color-text-inverse);
+}
+
+.btn-icon,
+.btn.no-text {
+  border-radius: 999px;
+}
+
+.fk-d-menu .btn,
+.menu-panel .btn {
+  border-radius: 0.55rem;
+}
+
+.menu-panel {
+  background: var(--t-Blokoto-color-background-surface);
+  border: 1px solid var(--t-Blokoto-color-border-default);
+  border-radius: var(--t-Blokoto-size-island-radius);
+  box-shadow: var(--shadow-menu-panel);
+}

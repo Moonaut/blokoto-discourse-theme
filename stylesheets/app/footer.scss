@@ -1,0 +1,14 @@
+#main-outlet .footer {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--t-Blokoto-color-border-default);
+}
+
+.footer-content {
+  color: var(--t-Blokoto-color-text-subtle);
+  font-size: var(--font-down-1);
+}
+
+.footer-nav {
+  gap: var(--space-3);
+}

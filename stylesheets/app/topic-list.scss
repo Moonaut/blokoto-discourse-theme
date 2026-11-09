@@ -1,0 +1,108 @@
+.topic-list {
+  overflow: hidden;
+  background: var(--t-Blokoto-color-background-surface);
+  border: 1px solid var(--t-Blokoto-color-border-default);
+  border-radius: var(--t-Blokoto-size-island-radius);
+  border-collapse: separate;
+  border-spacing: 0;
+
+  thead {
+    background: var(--t-Blokoto-color-background-raised);
+  }
+
+  th {
+    padding: var(--space-3);
+    color: var(--t-Blokoto-color-text-subtle);
+    font-family: var(--d-font-family--monospace);
+    font-size: var(--font-down-2);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--t-Blokoto-color-border-default);
+  }
+
+  td {
+    padding: var(--space-3);
+    border-top: 1px solid var(--t-Blokoto-color-border-default);
+  }
+
+  tbody tr:first-child td {
+    border-top: 0;
+  }
+
+  .topic-list-item {
+    transition: background-color 150ms ease;
+
+    &:hover {
+      background: var(--t-Blokoto-color-background-hover);
+    }
+  }
+
+  .topic-list-item:last-child td {
+    border-bottom: 0;
+  }
+
+  .main-link {
+    .title {
+      color: var(--t-Blokoto-color-text-default);
+      font-size: var(--d-topic-list-title-font-size);
+      font-weight: 600;
+      line-height: 1.35;
+      letter-spacing: -0.015em;
+    }
+
+    .topic-excerpt {
+      margin-top: var(--space-1);
+      color: var(--t-Blokoto-color-text-muted);
+      font-size: var(--font-down-1);
+      line-height: 1.5;
+    }
+  }
+
+  .topic-statuses .d-icon {
+    color: var(--t-Blokoto-color-text-subtle);
+  }
+
+  .posters {
+    a .avatar {
+      border: 1px solid var(--t-Blokoto-color-border-default);
+    }
+  }
+
+  .badge-category__wrapper .badge-category {
+    border-radius: 999px;
+    font-weight: 600;
+  }
+
+  .num.posts,
+  .num.views,
+  .num.age,
+  .activity {
+    color: var(--t-Blokoto-color-text-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .topic-list-data {
+    vertical-align: middle;
+  }
+}
+
+.topic-list-bottom {
+  margin-top: var(--space-4);
+  color: var(--t-Blokoto-color-text-muted);
+}
+
+.topic-list-loading {
+  background: transparent;
+}
+
+@include viewport.until(md) {
+  .topic-list {
+    border-radius: 0.9rem;
+
+    th,
+    td {
+      padding: var(--space-2);
+    }
+  }
+}

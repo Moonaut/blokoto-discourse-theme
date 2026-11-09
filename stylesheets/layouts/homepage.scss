@@ -1,0 +1,68 @@
+.homepage-blocks {
+  container-name: homepage-blocks;
+  container-type: inline-size;
+  margin-top: var(--space-5);
+
+  &__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--t-Blokoto-space-section) var(--space-4);
+    align-items: start;
+  }
+
+  &__block--categories,
+  &__block--featured {
+    min-width: 0;
+  }
+
+  &__block--latest {
+    min-width: 0;
+  }
+
+  &__block-container--sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    min-width: 0;
+  }
+
+  // Core keeps a wrapper for every entry, even when conditions reject the
+  // block or the block renders nothing. Remove the empty wrappers so they
+  // do not leave holes in the grid.
+  &__block--categories:not(:has(.blokoto-categories)),
+  &__block--featured:not(:has(.blokoto-topic-grid)),
+  &__block-container--sidebar:not(:has(.blokoto-panel, .blokoto-cta)) {
+    display: none;
+  }
+
+  @include container.from(lg, homepage-blocks) {
+    &__layout {
+      grid-template-columns: minmax(0, 1.9fr) minmax(17rem, 0.82fr);
+    }
+
+    &__block--categories,
+    &__block--featured {
+      grid-column: 1 / -1;
+    }
+
+    &__block--latest {
+      grid-column: 1;
+    }
+
+    &__block-container--sidebar {
+      position: sticky;
+      top: calc(4rem + var(--space-4));
+      grid-column: 2;
+    }
+  }
+}
+
+@include viewport.until(md) {
+  .homepage-blocks {
+    margin-top: var(--space-4);
+  }
+
+  .homepage-blocks__layout {
+    gap: var(--space-6);
+  }
+}

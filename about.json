@@ -1,0 +1,70 @@
+{
+  "name": "Blokoto",
+  "component": false,
+  "authors": "Moonaut",
+  "about_url": "https://community.blokoto.com",
+  "license_url": null,
+  "learn_more": "https://meta.discourse.org/t/developing-discourse-themes-theme-components/93648",
+  "theme_version": "0.1.0",
+  "minimum_discourse_version": "2026.10.0",
+  "maximum_discourse_version": null,
+  "assets": {
+    "blokoto-logo-white": "assets/blokoto-logo-white.svg",
+    "blokoto-grid-dark": "assets/grid-tile-dark.webp",
+    "blokoto-space-grotesk-300": "assets/space-grotesk-v16-latin-300.woff2",
+    "blokoto-space-grotesk-400": "assets/space-grotesk-v16-latin-regular.woff2",
+    "blokoto-space-grotesk-500": "assets/space-grotesk-v16-latin-500.woff2",
+    "blokoto-space-grotesk-600": "assets/space-grotesk-v16-latin-600.woff2",
+    "blokoto-space-grotesk-700": "assets/space-grotesk-v16-latin-700.woff2",
+    "blokoto-space-mono-400": "assets/space-mono-v17-latin-regular.woff2",
+    "blokoto-space-mono-700": "assets/space-mono-v17-latin-700.woff2"
+  },
+  "modifiers": {
+    "custom_homepage": true,
+    "only_theme_color_schemes": true,
+    "serialize_topic_excerpts": true,
+    "svg_icons": [
+      "arrow-right",
+      "arrow-up-right",
+      "bolt",
+      "book-open",
+      "chevron-right",
+      "comments",
+      "compass",
+      "fire",
+      "layer-group",
+      "tag",
+      "users"
+    ]
+  },
+  "color_schemes": {
+    "Blokoto Light": {
+      "primary": "03051b",
+      "secondary": "ffffff",
+      "tertiary": "ff4f00",
+      "quaternary": "4d6bca",
+      "header_background": "f2f7ff",
+      "header_primary": "03051b",
+      "highlight": "ffcd75",
+      "hover": "f5faff",
+      "selected": "ebf5ff",
+      "danger": "b13e53",
+      "success": "38b764",
+      "love": "b13e53"
+    },
+    "Blokoto Dark": {
+      "primary": "f5faff",
+      "secondary": "0e1337",
+      "tertiary": "ff5a1f",
+      "quaternary": "73eff7",
+      "header_background": "03051b",
+      "header_primary": "f5faff",
+      "highlight": "ffcd75",
+      "hover": "1a2354",
+      "selected": "232e6a",
+      "danger": "e05d72",
+      "success": "6ee7a0",
+      "love": "e05d72"
+    }
+  }
+}

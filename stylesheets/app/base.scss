@@ -1,0 +1,150 @@
+html {
+  background-color: var(--t-Blokoto-color-background-canvas);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--t-Blokoto-color-background-canvas);
+  color: var(--t-Blokoto-color-text-default);
+  font-family: var(--font-family);
+  font-size: var(--font-up-0);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
+
+// The grid is painted as a tinted mask so the same tiny tile reads as light
+// blue in the light scheme and cyan in the dark one.
+body::before {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  background-color: var(--t-Blokoto-color-grid-line);
+  content: "";
+  mask-image: url($blokoto-grid-dark);
+  mask-repeat: repeat;
+  mask-size: 16px 16px;
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+body::after {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 50% -20%,
+      var(--t-Blokoto-color-accent-soft),
+      transparent 42%
+    ),
+    radial-gradient(circle at 100% 100%, rgb(115 239 247 / 8%), transparent 38%);
+  content: "";
+  pointer-events: none;
+}
+
+#main-outlet-wrapper {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: var(--space-2);
+  align-items: start;
+  width: 100%;
+  max-width: 104rem;
+  margin-inline: auto;
+  padding: var(--space-2) var(--space-3) var(--space-5);
+}
+
+#main-outlet {
+  min-width: 0;
+  min-height: 62vh;
+  padding: var(--t-Blokoto-space-island);
+  background: var(--t-Blokoto-color-background-surface);
+  border: 1px solid var(--t-Blokoto-color-border-default);
+  border-radius: var(--t-Blokoto-size-island-radius);
+  box-shadow: var(--t-Blokoto-shadow-card);
+}
+
+#main-outlet > .container {
+  max-width: none;
+}
+
+.main-outlet-blocks {
+  container-name: main-outlet-blocks;
+  container-type: inline-size;
+}
+
+// The custom homepage is a composed canvas: its own blocks provide the
+// islands, so the outlet itself must not add another layer of chrome.
+body:has(.homepage-blocks) {
+  #main-outlet-wrapper {
+    grid-template-areas:
+      "content"
+      "below-content";
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 90rem;
+  }
+
+  .sidebar-wrapper {
+    display: none;
+  }
+
+  #main-outlet {
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+}
+
+a {
+  color: var(--t-Blokoto-color-text-accent);
+  text-decoration-color: color-mix(
+    in srgb,
+    var(--t-Blokoto-color-accent) 35%,
+    transparent
+  );
+  text-underline-offset: 0.18em;
+  transition:
+    color 150ms ease,
+    text-decoration-color 150ms ease;
+}
+
+a:hover {
+  color: var(--t-Blokoto-color-accent-hovered);
+}
+
+::selection {
+  background: var(--t-Blokoto-color-button-background);
+  color: var(--t-Blokoto-color-text-inverse);
+}
+
+:focus-visible {
+  outline: 2px solid var(--t-Blokoto-color-accent);
+  outline-offset: 2px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

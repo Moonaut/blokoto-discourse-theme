@@ -1,0 +1,49 @@
+:root {
+  --d-max-width: 86rem;
+  --d-wrap-padding-x: var(--space-4);
+  --d-main-content-gap: var(--space-2);
+  --d-border-radius: 0.625rem;
+  --d-border-radius-large: var(--t-Blokoto-size-island-radius);
+  --d-button-border-radius: 0.625rem;
+  --d-input-border-radius: 0.625rem;
+  --d-sidebar-width: 17rem;
+  --d-sidebar-background: transparent;
+  --d-sidebar-border-color: transparent;
+  --d-sidebar-row-height: 2.35rem;
+  --d-sidebar-row-horizontal-padding: 0.65rem;
+  --d-sidebar-link-color: var(--t-Blokoto-color-text-muted);
+  --d-sidebar-link-icon-color: var(--t-Blokoto-color-text-subtle);
+  --d-sidebar-active-background: var(--t-Blokoto-color-button-background);
+  --d-sidebar-active-color: var(--t-Blokoto-color-text-inverse);
+  --d-sidebar-active-icon-color: var(--t-Blokoto-color-text-inverse);
+  --d-sidebar-highlight-background: var(--t-Blokoto-color-background-hover);
+  --d-sidebar-highlight-color: var(--t-Blokoto-color-text-default);
+  --d-content-background: transparent;
+  --d-link-color: var(--t-Blokoto-color-text-accent);
+  --d-header-icon-color: var(--t-Blokoto-color-text-muted);
+  --d-header-icon-color--hover: var(--t-Blokoto-color-text-default);
+  --d-header-icon-color--active: var(--t-Blokoto-color-text-accent);
+  --d-header-icon-background--hover: var(--t-Blokoto-color-background-hover);
+  --d-header-icon-background--active: var(--t-Blokoto-color-accent-soft);
+  --d-header-padding-x: var(--space-3);
+  --d-logo-height: 2.6rem;
+  --d-topic-list-header-background-color: var(
+    --t-Blokoto-color-background-raised
+  );
+  --d-topic-list-header-text-color: var(--t-Blokoto-color-text-muted);
+  --d-topic-list-data-padding-y: var(--space-3);
+  --d-topic-list-data-padding-x: var(--space-3);
+  --d-topic-list-title-font-size: var(--font-up-1);
+  --d-tag-background-color: var(--t-Blokoto-color-background-raised);
+  --d-tag-border-radius: 999px;
+  --d-tag-font-weight: 600;
+  --d-post-control-border-radius: 999px;
+  --d-input-bg-color: var(--t-Blokoto-color-background-raised);
+  --d-input-text-color: var(--t-Blokoto-color-text-default);
+  --d-input-border: 1px solid var(--t-Blokoto-color-border-default);
+  --shadow-card: var(--t-Blokoto-shadow-card);
+  --shadow-header: 0 18px 40px -30px rgb(3 5 27 / 45%);
+  --secondary: var(--t-Blokoto-color-background-surface);
+  --primary: var(--t-Blokoto-color-text-default);
+  --tertiary: var(--t-Blokoto-color-accent);
+}

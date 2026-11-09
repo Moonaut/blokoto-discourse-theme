@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url($blokoto-space-grotesk-300) format("woff2");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url($blokoto-space-grotesk-400) format("woff2");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url($blokoto-space-grotesk-500) format("woff2");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url($blokoto-space-grotesk-600) format("woff2");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url($blokoto-space-grotesk-700) format("woff2");
+}
+
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url($blokoto-space-mono-400) format("woff2");
+}
+
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url($blokoto-space-mono-700) format("woff2");
+}
+
+:root {
+  --font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --heading-font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --d-font-family--monospace:
+    "Space Mono", ui-monospace, sfmono-regular, menlo, monospace;
+}

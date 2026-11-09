@@ -1,0 +1,81 @@
+.blokoto-panel {
+  overflow: hidden;
+  background: var(--t-Blokoto-color-background-surface);
+  border: 1px solid var(--t-Blokoto-color-border-default);
+  border-radius: var(--t-Blokoto-size-island-radius);
+  box-shadow: var(--t-Blokoto-shadow-card);
+
+  &__header {
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--t-Blokoto-color-border-default);
+  }
+
+  &__icon {
+    display: inline-flex;
+    color: var(--t-Blokoto-color-text-accent);
+  }
+
+  &__title {
+    margin: 0;
+    color: var(--t-Blokoto-color-text-default);
+    font-size: var(--font-up-1);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+}
+
+.blokoto-link-list {
+  padding: var(--space-2);
+  margin: 0;
+  list-style: none;
+
+  &__item {
+    margin: 0;
+  }
+
+  &__link {
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+    padding: 0.65rem 0.75rem;
+    color: var(--t-Blokoto-color-text-muted);
+    font-size: var(--font-down-1);
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 0.7rem;
+    transition:
+      background-color 150ms ease,
+      color 150ms ease;
+
+    > .d-icon:last-child {
+      margin-left: auto;
+      color: var(--t-Blokoto-color-text-subtle);
+      font-size: 0.75em;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: var(--t-Blokoto-color-text-default);
+      background: var(--t-Blokoto-color-background-hover);
+
+      > .d-icon:last-child {
+        color: var(--t-Blokoto-color-text-accent);
+      }
+    }
+  }
+
+  &__icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    color: var(--t-Blokoto-color-text-accent);
+  }
+
+  &__label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

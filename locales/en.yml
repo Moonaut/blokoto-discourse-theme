@@ -1,0 +1,79 @@
+en:
+  theme_metadata:
+    description: "A grid-based, island-styled theme for the Blokoto community. Deep indigo surfaces, warm orange accents, Space Grotesk type, and a custom homepage built with theme blocks."
+    settings:
+      homepage_show_categories: "Show the featured category islands on the custom homepage."
+      homepage_category_ids: "Categories to feature, in order. Leave empty to show the most active top-level categories."
+      homepage_category_count: "Maximum number of categories to show."
+      homepage_show_featured: "Show the featured discussions section when a featured tag is configured."
+      homepage_featured_tag: "Tag used to build the featured discussion cards. Only the first tag is used."
+      homepage_featured_count: "Number of featured discussion cards."
+      homepage_latest_count: "Number of latest discussion cards."
+      homepage_show_links: "Show the community links panel beside the latest discussions."
+      homepage_cta_url: "Destination for the custom homepage call-to-action button."
+      hero_primary_url: "Destination for the hero's primary button."
+      hero_secondary_url: "Destination for the hero's secondary link."
+      category_banner_category_ids: "Categories that receive the island category banner, including their subcategories. Leave empty for every category."
+      category_banner_show_description: "Show the category description inside the island category banner."
+
+  hero:
+    eyebrow: "The Blokoto community"
+    title: "Build worlds. Share them. Play together."
+    subtitle: "A place for creators and players to trade ideas, show off what they are making, and find their next world."
+    primary: "Join the community"
+    secondary: "Browse the latest"
+    logo_alt: "Blokoto"
+    feature_worlds: "Worlds"
+    feature_avatars: "Avatars"
+    feature_together: "Together"
+    features_aria: "What you can do here"
+
+  homepage:
+    categories:
+      eyebrow: "Pick a starting island"
+      title: "Find your corner"
+      subtitle: "Every good world starts somewhere. Jump into the space that fits what you are making."
+      all: "All categories"
+      topics:
+        one: "%{count} topic"
+        other: "%{count} topics"
+    featured:
+      eyebrow: "Community picks"
+      title: "Worth a look"
+      subtitle: "Conversations the community keeps coming back to."
+      link: "See all featured"
+    latest:
+      eyebrow: "Fresh off the press"
+      title: "Latest discussions"
+      subtitle: "New questions, new builds, new ideas. Pull up a chair."
+      link: "View all"
+    links:
+      title: "Start here"
+      icon: "compass"
+      guidelines: "Community guidelines"
+      faq: "Frequently asked questions"
+      welcome: "Welcome to Blokoto"
+      discord: "Join the Discord"
+      support: "Contact support"
+    cta:
+      eyebrow: "Your island is waiting"
+      title: "Make something with us."
+      description: "Ask a question, share a build, or just say hello. The community is better with you in it."
+      button: "Create an account"
+    topic_grid:
+      read: "Read discussion"
+      posts: "posts"
+      views: "views"
+      empty: "No discussions yet. Be the first to start one."
+      load_error: "This section could not load. Please try again."
+      retry: "Retry"
+
+  category_banner:
+    eyebrow: "Category island"
+    fallback_description: "Explore what the community is building here."
+    topics:
+      one: "%{count} topic"
+      other: "%{count} topics"
+
+  sidebar:
+    home: "Community home"

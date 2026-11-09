@@ -1,0 +1,111 @@
+.d-header-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: var(--space-2) var(--space-3) 0;
+  background: transparent;
+  border: 0;
+}
+
+.d-header {
+  height: 4rem;
+  padding-inline: var(--space-3);
+  background: color-mix(
+    in srgb,
+    var(--t-Blokoto-color-background-surface) 88%,
+    transparent
+  );
+  border: 1px solid var(--t-Blokoto-color-border-default);
+  border-radius: var(--t-Blokoto-size-island-radius);
+  box-shadow: var(--shadow-header);
+  backdrop-filter: blur(18px);
+}
+
+.d-header .wrap {
+  max-width: 104rem;
+  height: 100%;
+}
+
+.d-header .title {
+  align-items: center;
+  min-width: 0;
+}
+
+.d-header #site-logo,
+.d-header .logo {
+  max-height: var(--d-logo-height);
+  width: auto;
+}
+
+.d-header .title a {
+  display: block;
+  width: 10rem;
+  height: 2.65rem;
+  overflow: hidden;
+  background-color: var(--t-Blokoto-color-text-default);
+  mask: url($blokoto-logo-white) no-repeat center / contain;
+
+  // Keep the site title in the accessibility tree without painting the
+  // default logo or the text next to the custom wordmark.
+  > img {
+    display: none;
+  }
+
+  > * {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 100%;
+}
+
+.d-header-icons {
+  gap: var(--space-1);
+}
+
+.d-header-icons .icon,
+.header-dropdown-toggle {
+  border-radius: 0.625rem;
+}
+
+.d-header .search-input,
+.d-header .search-field input {
+  background: var(--t-Blokoto-color-background-raised);
+  border: 1px solid var(--t-Blokoto-color-border-default);
+  border-radius: 999px;
+}
+
+.header-sidebar-toggle button {
+  border-radius: 0.625rem;
+}
+
+.d-header .badge-notification {
+  background: var(--t-Blokoto-color-accent);
+  color: var(--t-Blokoto-color-text-inverse);
+}
+
+@include viewport.until(md) {
+  .d-header-wrap {
+    padding: var(--space-1) var(--space-2) 0;
+  }
+
+  .d-header {
+    height: 3.5rem;
+    padding-inline: var(--space-2);
+    border-radius: 0.9rem;
+  }
+
+  .d-header .title a {
+    width: 8.25rem;
+    height: 2.2rem;
+  }
+}
