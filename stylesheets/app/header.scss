@@ -1,6 +1,8 @@
 .d-header-wrap {
   position: relative;
   z-index: 1000;
+  box-sizing: border-box;
+  height: var(--t-Blokoto-header-height);
   padding: var(--space-2) var(--space-2) 0;
   background: transparent;
   border: 0;
@@ -91,7 +93,12 @@
 }
 
 @include viewport.until(md) {
+  :root {
+    --t-Blokoto-header-height: 3.75rem;
+  }
+
   .d-header-wrap {
+    height: var(--t-Blokoto-header-height);
     padding: var(--space-2) var(--space-2) 0;
   }
 

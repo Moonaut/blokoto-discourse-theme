@@ -17,9 +17,12 @@ purpose: get people into current discussions.
   list. No category grid, featured section, link panel, CTA card, or second feed.
 - **Full-width islands.** The main surface, sidebar, and header span the available
   width. Every island uses the same 8px outer margin and 8px gap.
-- **Transparent, borderless navbar.** The header is navigation only, not a filled
-  card. It scrolls with the page so it never sits over content with a see-through
-  background.
+- **The page never scrolls.** `html`/`body` are viewport-height and locked. The main
+  island and the sidebar are independent scroll containers; the page chrome stays
+  put.
+- **Transparent, borderless navbar.** The header is navigation only: no fill, no
+  border, no card. It stays above the scrollable main island, so it never sits over
+  moving content with a see-through background.
 - **Content before chrome.** No gradients, nested cards, icon/heading/text tiles,
   or decorative stat blocks. Hierarchy comes from type, spacing, and one rule
   between sections.
@@ -63,10 +66,16 @@ homepage. The rest of the sidebar is Discourse's normal navigation.
 ## Layout rules
 
 - `--space-2` (8px) is the outer margin and the gap between every island.
+- `html`, `body`, and `#main-outlet-wrapper` are locked to `100dvh`; the body has
+  `overflow: hidden`.
+- The main island is `overflow-y: auto`; the homepage uses the same rule on
+  `.blokoto-home`. The sidebar scrolls independently.
 - The header is `position: relative` with a transparent background and no border.
 - The homepage uses a single full-width surface; its intro is a two-column
   editorial split at desktop (copy left, actions right) and a single column on
   mobile.
+- On mobile, category topic rows collapse to title plus tags inside one scrollable
+  island; table columns, avatars, and activity are removed rather than squeezed.
 - The latest list is not a card grid: rows are separated by a 1px rule inside the
   one surface.
 - The sidebar and main content share the same width system and gap as the

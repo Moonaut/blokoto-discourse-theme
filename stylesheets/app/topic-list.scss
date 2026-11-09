@@ -92,11 +92,51 @@
 
 @include viewport.until(md) {
   .topic-list {
+    display: block;
     border-radius: 0.75rem;
 
-    th,
+    thead,
+    .posters,
+    .pull-left,
+    .pull-right,
+    .topic-item-stats .num.activity {
+      display: none;
+    }
+
+    .topic-item-metadata {
+      float: none;
+      width: auto;
+      margin: 0;
+    }
+
+    tbody,
+    tr,
     td {
-      padding: var(--space-2);
+      display: block;
+    }
+
+    .topic-list-item {
+      padding: 0.55rem 0.9rem;
+      border-top: 1px solid var(--t-Blokoto-color-border);
+
+      &:first-child {
+        border-top: 0;
+      }
+    }
+
+    .topic-list-data,
+    td {
+      padding: 0;
+      border: 0;
+    }
+
+    .topic-item-stats {
+      margin-top: 0;
+    }
+
+    .main-link .title {
+      font-size: 0.9375rem;
+      line-height: 1.45;
     }
   }
 }

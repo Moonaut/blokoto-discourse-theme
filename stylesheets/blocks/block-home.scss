@@ -1,16 +1,31 @@
 .homepage-blocks {
-  margin: 0 0 var(--space-6);
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  margin: 0;
 }
 
-.homepage-blocks__layout {
-  display: block;
+.homepage-blocks__container,
+.homepage-blocks__layout,
+.homepage-blocks__block--home {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .blokoto-home {
-  overflow: hidden;
+  box-sizing: border-box;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   background: var(--t-Blokoto-color-surface);
   border: 1px solid var(--t-Blokoto-color-border);
   border-radius: 1.25rem;
+  scrollbar-gutter: stable;
 }
 
 .blokoto-home__intro {

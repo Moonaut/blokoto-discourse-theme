@@ -1,9 +1,11 @@
-html {
+html,
+body {
+  height: 100%;
+  overflow: hidden;
   background-color: var(--t-Blokoto-color-canvas);
 }
 
 body {
-  background-color: var(--t-Blokoto-color-canvas);
   color: var(--t-Blokoto-color-text);
   font-family: var(--font-family);
   font-size: var(--font-up-0);
@@ -29,16 +31,33 @@ body::before {
   position: relative;
   z-index: 1;
   display: grid;
+  grid-template-areas: "sidebar content";
+  grid-template-columns: var(--d-sidebar-width) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
   gap: var(--space-2);
-  align-items: start;
+  align-items: stretch;
   width: 100%;
+  height: calc(100dvh - var(--t-Blokoto-header-height));
+  min-height: 0;
   padding: var(--space-2);
+  overflow: hidden;
+}
+
+#below-content,
+.powered-by-discourse {
+  display: none;
 }
 
 #main-outlet {
+  box-sizing: border-box;
+  grid-area: content;
+  scrollbar-gutter: stable;
   min-width: 0;
-  min-height: 60vh;
+  min-height: 0;
+  height: 100%;
   padding: var(--space-5);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   background: var(--t-Blokoto-color-surface);
   border: 1px solid var(--t-Blokoto-color-border);
   border-radius: var(--t-Blokoto-radius);
@@ -48,12 +67,40 @@ body::before {
   max-width: none;
 }
 
+#main-outlet,
+.blokoto-home,
+.sidebar-wrapper {
+  scrollbar-width: thin;
+  scrollbar-color: var(--t-Blokoto-color-border-strong) transparent;
+}
+
+#main-outlet::-webkit-scrollbar,
+.blokoto-home::-webkit-scrollbar,
+.sidebar-wrapper::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+#main-outlet::-webkit-scrollbar-track,
+.blokoto-home::-webkit-scrollbar-track,
+.sidebar-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#main-outlet::-webkit-scrollbar-thumb,
+.blokoto-home::-webkit-scrollbar-thumb,
+.sidebar-wrapper::-webkit-scrollbar-thumb {
+  background: var(--t-Blokoto-color-border-strong);
+  background-clip: padding-box;
+  border: 3px solid transparent;
+  border-radius: 999px;
+}
+
 body:has(.blokoto-home) {
   #main-outlet-wrapper {
-    grid-template-areas:
-      "content"
-      "below-content";
+    grid-template-areas: "content";
     grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
   }
 
   .sidebar-wrapper {
@@ -61,9 +108,13 @@ body:has(.blokoto-home) {
   }
 
   #main-outlet {
+    display: flex;
+    flex-direction: column;
     padding: 0;
+    overflow: hidden;
     background: transparent;
     border: 0;
+    scrollbar-gutter: auto;
   }
 }
 
@@ -96,6 +147,17 @@ h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
   letter-spacing: -0.03em;
+}
+
+@include viewport.until(lg) {
+  #main-outlet-wrapper {
+    grid-template-areas: "content";
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sidebar-wrapper {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
