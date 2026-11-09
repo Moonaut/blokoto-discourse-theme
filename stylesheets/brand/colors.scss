@@ -1,74 +1,18 @@
 :root {
-  // Canvas, surfaces and borders
-  --t-Blokoto-color-background-canvas: light-dark(#f2f7ff, #03051b);
-  --t-Blokoto-color-background-surface: light-dark(#fff, #0e1337);
-  --t-Blokoto-color-background-raised: light-dark(#f7fbff, #141a45);
-  --t-Blokoto-color-background-sunken: light-dark(#ebf5ff, #080b23);
-  --t-Blokoto-color-background-hover: light-dark(#f5faff, #1a2354);
-  --t-Blokoto-color-grid-line: light-dark(#7d9bf1, #73eff7);
-  --t-Blokoto-color-border-default: light-dark(#d4e8ff, #1a2354);
-  --t-Blokoto-color-border-strong: light-dark(#b7d4ff, #29397f);
-
-  // Text
-  --t-Blokoto-color-text-default: light-dark(#03051b, #f5faff);
-  --t-Blokoto-color-text-muted: light-dark(#4d6bca, #b7d4ff);
-  --t-Blokoto-color-text-subtle: light-dark(#536fca, #7d9bf1);
-  --t-Blokoto-color-text-accent: light-dark(#c43a00, #ff9a70);
-  --t-Blokoto-color-text-inverse: #fff8f3;
-
-  // Accent
+  --t-Blokoto-color-canvas: light-dark(#f4f8ff, #050617);
+  --t-Blokoto-color-surface: light-dark(#fff, #0e1337);
+  --t-Blokoto-color-raised: light-dark(#f7fbff, #141a45);
+  --t-Blokoto-color-border: light-dark(#dce9ff, #1f2855);
+  --t-Blokoto-color-border-strong: light-dark(#b7d4ff, #2f3b76);
+  --t-Blokoto-color-text: light-dark(#03051b, #f5faff);
+  --t-Blokoto-color-muted: light-dark(#4d6bca, #b7d4ff);
+  --t-Blokoto-color-subtle: light-dark(#536fca, #7d9bf1);
   --t-Blokoto-color-accent: light-dark(#ff4f00, #ff5a1f);
-  --t-Blokoto-color-accent-hovered: light-dark(#e64700, #ff7a3d);
-  --t-Blokoto-color-button-background: #cc3a00;
-  --t-Blokoto-color-button-background-hovered: #b53300;
-  --t-Blokoto-color-accent-soft: light-dark(
-    rgb(255 79 0 / 10%),
-    rgb(255 90 31 / 18%)
-  );
-  --t-Blokoto-color-accent-contrast: #160b05;
-  --t-Blokoto-color-accent-contrast-hovered: #2c1608;
-
-  // Secondary accents used by the decorative scene and card visuals
-  --t-Blokoto-color-cyan: light-dark(#0a8f9c, #73eff7);
-  --t-Blokoto-color-blue: light-dark(#3b5dc9, #41a6f6);
-  --t-Blokoto-color-yellow: #ffcd75;
-  --t-Blokoto-color-green: light-dark(#1f8a4c, #6ee7a0);
-
-  // Elevation and chrome
-  --t-Blokoto-shadow-card:
-    0 1px 0 rgb(255 255 255 / 6%) inset, 0 18px 40px -28px rgb(3 5 27 / 55%);
-  --t-Blokoto-shadow-raised:
-    0 22px 50px -26px rgb(3 5 27 / 62%), 0 2px 0 rgb(255 255 255 / 5%) inset;
-  --t-Blokoto-shadow-hero: 0 40px 90px -50px rgb(255 79 0 / 60%);
-
-  // Hero scene (always dark, in both colour schemes)
-  --t-Blokoto-hero-color-background: #08071a;
-  --t-Blokoto-hero-color-surface: #0d0b2e;
-  --t-Blokoto-hero-color-border: rgb(245 250 255 / 10%);
-  --t-Blokoto-hero-color-text: #f5faff;
-  --t-Blokoto-hero-color-muted: #b7d4ff;
-  --t-Blokoto-hero-color-glow: #ff4f00;
-  --t-Blokoto-hero-color-cyan: #73eff7;
-  --t-Blokoto-hero-color-violet: #6842ff;
-  --t-Blokoto-hero-color-violet-deep: #241155;
-  --t-Blokoto-hero-color-cube-orange-shadow: #a92300;
-  --t-Blokoto-hero-color-cube-orange-shadow-deep: #8d1c00;
-  --t-Blokoto-hero-color-cube-orange-shadow-deepest: #3d0d00;
-  --t-Blokoto-hero-color-cube-orange-light: #ffb48f;
-  --t-Blokoto-hero-color-cube-cyan-shadow: #0a6f78;
-  --t-Blokoto-hero-color-cube-cyan-shadow-deep: #07555c;
-  --t-Blokoto-hero-color-cube-cyan-shadow-deepest: #032a2e;
-  --t-Blokoto-hero-color-cube-cyan-light: #c9fbff;
-  --t-Blokoto-hero-color-cube-cyan-mid: #61dbe4;
-  --t-Blokoto-hero-color-cube-violet-shadow: #32169b;
-  --t-Blokoto-hero-color-cube-violet-shadow-deep: #251078;
-  --t-Blokoto-hero-color-cube-violet-shadow-deepest: #140842;
-  --t-Blokoto-hero-color-cube-violet-light: #b7a8ff;
-  --t-Blokoto-hero-color-cube-violet-mid: #6f55ff;
-
-  // Size and space
-  --t-Blokoto-size-island-radius: 1.125rem;
-  --t-Blokoto-size-hero-radius: 1.75rem;
-  --t-Blokoto-space-island: clamp(1rem, 2.2vw, 1.5rem);
-  --t-Blokoto-space-section: clamp(2rem, 4vw, 3.5rem);
+  --t-Blokoto-color-text-accent: light-dark(#c43a00, #ff9a70);
+  --t-Blokoto-color-button: #c43a00;
+  --t-Blokoto-color-button-hover: #a93200;
+  --t-Blokoto-color-on-button: #fff8f3;
+  --t-Blokoto-color-grid: light-dark(#7d9bf1, #73eff7);
+  --t-Blokoto-radius: 1rem;
+  --t-Blokoto-radius-small: 0.5rem;
 }

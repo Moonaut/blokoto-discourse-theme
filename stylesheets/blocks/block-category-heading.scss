@@ -1,0 +1,20 @@
+.blokoto-category-heading {
+  margin-bottom: var(--space-4);
+
+  &__title {
+    margin: 0;
+    color: var(--t-Blokoto-color-text);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+  }
+
+  &__description {
+    max-width: 65ch;
+    margin: var(--space-2) 0 0;
+    color: var(--t-Blokoto-color-muted);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+}

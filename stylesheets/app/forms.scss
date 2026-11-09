@@ -6,54 +6,51 @@ input[type="url"],
 input[type="number"],
 textarea,
 select {
-  background: var(--t-Blokoto-color-background-raised);
-  border: 1px solid var(--t-Blokoto-color-border-default);
+  background: var(--t-Blokoto-color-raised);
+  border: 1px solid var(--t-Blokoto-color-border);
   border-radius: var(--d-input-border-radius);
-  color: var(--t-Blokoto-color-text-default);
+  color: var(--t-Blokoto-color-text);
   transition:
-    border-color 150ms ease,
-    box-shadow 150ms ease;
+    border-color 140ms ease,
+    box-shadow 140ms ease;
 
   &:focus {
-    border-color: var(--t-Blokoto-color-accent);
-    box-shadow: 0 0 0 3px var(--t-Blokoto-color-accent-soft);
+    border-color: var(--t-Blokoto-color-text-accent);
+    box-shadow: 0 0 0 3px
+      color-mix(in srgb, var(--t-Blokoto-color-accent) 16%, transparent);
     outline: 0;
   }
 
   &::placeholder {
-    color: var(--t-Blokoto-color-text-subtle);
+    color: var(--t-Blokoto-color-subtle);
   }
 }
 
 .d-editor {
   .d-editor-input,
   .d-editor-preview {
-    background: var(--t-Blokoto-color-background-surface);
-    border-color: var(--t-Blokoto-color-border-default);
+    background: var(--t-Blokoto-color-surface);
+    border-color: var(--t-Blokoto-color-border);
   }
 }
 
 .d-editor-container {
-  border: 1px solid var(--t-Blokoto-color-border-default);
-  border-radius: var(--t-Blokoto-size-island-radius);
   overflow: hidden;
+  border: 1px solid var(--t-Blokoto-color-border);
+  border-radius: var(--t-Blokoto-radius);
 }
 
 .select-kit {
   .select-kit-header {
-    background: var(--t-Blokoto-color-background-raised);
-    border: 1px solid var(--t-Blokoto-color-border-default);
-    border-radius: 0.625rem;
+    background: var(--t-Blokoto-color-raised);
+    border: 1px solid var(--t-Blokoto-color-border);
+    border-radius: var(--t-Blokoto-radius-small);
   }
 
   .select-kit-body {
-    background: var(--t-Blokoto-color-background-surface);
-    border: 1px solid var(--t-Blokoto-color-border-default);
-    border-radius: var(--t-Blokoto-size-island-radius);
+    background: var(--t-Blokoto-color-surface);
+    border: 1px solid var(--t-Blokoto-color-border);
+    border-radius: var(--t-Blokoto-radius);
     box-shadow: var(--shadow-menu-panel);
   }
-}
-
-.search-menu .search-input {
-  border-radius: 999px;
 }

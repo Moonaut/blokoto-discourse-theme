@@ -1,178 +1,152 @@
 # Blokoto Community Theme
 
-A full Discourse theme for `community.blokoto.com`, built to feel like the
-Blokoto web platform: a deep-indigo grid canvas, floating island panels, warm
-orange accents, Space Grotesk type, and a block-built custom homepage.
+A restrained Discourse theme for the Blokoto community. One surface, one
+purpose: get people into current discussions.
 
-## Preview
+![Dark homepage](docs/preview-dark.webp)
 
-| Dark | Light |
-| --- | --- |
-| ![Dark homepage](docs/preview-dark.webp) | ![Light homepage](docs/preview-light.webp) |
+![Light homepage](docs/preview-light.webp)
 
 ![Mobile homepage](docs/preview-mobile.webp)
 
 ![Category page](docs/preview-category.webp)
 
-The theme uses Discourse's current theme conventions:
+## Design contract
 
-- a packaged full theme with light and dark color schemes;
-- the Blocks API (`@block`, `api.renderBlocks`) with one initializer per outlet;
-- the `custom_homepage` theme modifier;
-- theme settings read in the layout initializer and passed to blocks as args;
-- theme translations in English, Brazilian Portuguese, and Spanish;
-- BEM SCSS with core container/viewport mixins, no viewport-width layout hacks;
-- local font and image assets, no third-party CDN requests.
+- **One homepage surface.** A compact introduction and a single latest-discussion
+  list. No category grid, featured section, link panel, CTA card, or second feed.
+- **Full-width islands.** The main surface, sidebar, and header span the available
+  width. Every island uses the same 8px outer margin and 8px gap.
+- **Transparent, borderless navbar.** The header is navigation only, not a filled
+  card. It scrolls with the page so it never sits over content with a see-through
+  background.
+- **Content before chrome.** No gradients, nested cards, icon/heading/text tiles,
+  or decorative stat blocks. Hierarchy comes from type, spacing, and one rule
+  between sections.
+- **Blokoto's world, kept.** Deep indigo surfaces, a subtle tile grid, warm orange
+  for the primary action and links, Space Grotesk type, and the Blokoto wordmark.
+- **One primary action.** "Start a discussion" plus a quiet "Browse categories"
+  link. The latest list has one secondary "View all" link.
 
 ## What is included
 
-### Custom homepage
+### Homepage
 
-`javascripts/discourse/api-initializers/main-outlet-blocks.gjs` renders the
-hero on the `main-outlet-blocks` outlet. `homepage-blocks.gjs` composes the
-homepage below it:
+One block renders the whole custom homepage:
 
 | Block | Purpose |
 | --- | --- |
-| `theme:blokoto:hero` | Headline, CTAs, community value props, and a CSS-only isometric voxel scene. |
-| `theme:blokoto:category-grid` | Bento grid of the most active categories. Optional category IDs and count. |
-| `theme:blokoto:topic-grid` | Card grid of discussions. Used for both the optional featured tag and the latest topics. |
-| `theme:blokoto:links` | Sidebar panel of community starting points. |
-| `theme:blokoto:cta` | Compact join call-to-action in the sidebar. |
-| `theme:blokoto:category-banner` | Island banner on category pages. |
-| `theme:blokoto:home-link` | "Community home" link in the sidebar. |
+| `theme:blokoto:home` | Compact intro, one primary action, and a latest-discussion list with category, author, and reply count. |
 
-The homepage is assembled in `homepage-blocks.gjs`, so every setting,
-condition, and slot is visible in one declarative layout. The block components
-are small and reusable rather than homepage-only.
+The block owns loading, empty, and error states. It fetches `latest` through the
+normal Discourse topic-list store and respects the configured item count.
+
+### Category pages
+
+`theme:blokoto:category-heading` supplies the visible category title and
+description above Discourse's normal navigation and topic table. It is plain
+type — no banner, card, or extra panel.
+
+### Sidebar
+
+`theme:blokoto:home-link` adds a single "Community home" entry back to the custom
+homepage. The rest of the sidebar is Discourse's normal navigation.
 
 ### Settings
 
 | Setting | Default | Notes |
 | --- | --- | --- |
-| `homepage_show_categories` | `true` | Show the category grid. |
-| `homepage_category_ids` | empty | Ordered category picker. Empty = most active top-level categories. |
-| `homepage_category_count` | `6` | 1–12 categories. |
-| `homepage_show_featured` | `true` | Show the featured discussions section. |
-| `homepage_featured_tag` | empty | Tag picker; only the first tag is used. Section hides when empty. |
-| `homepage_featured_count` | `3` | 1–6 cards. |
-| `homepage_latest_count` | `6` | 1–12 cards. |
-| `homepage_show_links` | `true` | Show the "Start here" panel. |
-| `homepage_cta_url` | `/signup` | Sidebar CTA destination. |
-| `hero_primary_url` | `/signup` | Hero primary button destination. |
-| `hero_secondary_url` | `/latest` | Hero secondary link destination. |
-| `category_banner_category_ids` | empty | Category picker for the banner, including subcategories. Empty = all categories. |
-| `category_banner_show_description` | `true` | Show the category description. |
+| `homepage_latest_count` | `6` | 1–12 discussions on the homepage. |
+| `homepage_primary_url` | `/new-topic` | Primary action destination. |
+| `homepage_secondary_url` | `/categories` | Secondary link destination. |
 
-### Colors and tokens
+## Layout rules
 
-The theme owns tokens under the `--t-Blokoto-*` namespace. Core `--d-*` and
-Discourse color variables are overridden only where the layout needs it.
+- `--space-2` (8px) is the outer margin and the gap between every island.
+- The header is `position: relative` with a transparent background and no border.
+- The homepage uses a single full-width surface; its intro is a two-column
+  editorial split at desktop (copy left, actions right) and a single column on
+  mobile.
+- The latest list is not a card grid: rows are separated by a 1px rule inside the
+  one surface.
+- The sidebar and main content share the same width system and gap as the
+  homepage.
 
-| Token | Light | Dark |
-| --- | --- | --- |
-| canvas | `#f2f7ff` | `#03051b` |
-| surface | `#fff` | `#0e1337` |
-| raised | `#f7fbff` | `#141a45` |
-| border | `#d4e8ff` | `#1a2354` |
-| accent | `#ff4f00` | `#ff5a1f` |
-| button | `#cc3a00` | `#cc3a00` |
-| text | `#03051b` | `#f5faff` |
-| muted text | `#4d6bca` | `#b7d4ff` |
+## Building on it
 
-`#cc3a00` is used for filled buttons and active navigation so white labels
-clear WCAG AA; the brighter brand orange is reserved for decorative accents,
-borders, and glows. The custom homepage hero is intentionally dark in both
-schemes.
+```text
+about.json
+settings.yml
+locales/{en,pt_BR,es}.yml
+assets/                         Space Grotesk, wordmark, grid tile
+common/common.scss              imports only
+stylesheets/
+  brand/                        fonts and color tokens
+  app/                          base, header, sidebar, topic list, topic, forms
+  blocks/                       homepage and category heading
+  layouts/                      full-width homepage composition
+javascripts/discourse/
+  api-initializers/             one file per block outlet
+  blocks/                       block components
+spec/system/                    homepage and category heading specs
+```
 
-The grid is drawn as a fixed, tinted mask over the canvas using the bundled
-16×16 tile. The color follows the active scheme, so the same asset works for
-light and dark.
+The theme is a full theme (not a component) with `custom_homepage` enabled. It
+defines Blokoto Light and Dark color schemes and uses only Space Grotesk, loaded
+locally.
 
 ## Local development
 
-The theme was developed against a local Discourse 2026.11 instance running in
-Docker. The `discourse_theme` gem uploads and watches a local checkout.
+The theme was built and verified against a local Discourse 2026.11 Docker
+instance.
 
 ```bash
-# once
 gem install discourse_theme
 
-# from the directory that contains this theme
 export DISCOURSE_URL=http://localhost:8085
 export DISCOURSE_API_KEY=your_admin_api_key
 
 discourse_theme watch DiscourseTheme
 ```
 
-`discourse_theme watch` will create the theme on first sync and print a preview
-URL. Make it the active theme in **Admin → Customize → Themes**, then set it as
-the default theme. The custom homepage is activated by the
-`"custom_homepage": true` modifier in `about.json`; no page template override is
-needed.
-
-Useful commands:
+On first sync, `watch` offers to create the theme. After it is created, make it
+the active/default theme under **Admin → Customize → Themes**. The custom
+homepage activates through the `custom_homepage` modifier; there is no page
+template override.
 
 ```bash
-# upload a one-off change after the theme id is stored by `watch`
+# after the theme id is stored by watch
 discourse_theme upload DiscourseTheme
 
-# validate JS, SCSS, and formatting
+# JS, SCSS, formatting, and types
 pnpm install
 pnpm lint
-
-# run the system specs against a configured Discourse checkout
-discourse_theme rspec DiscourseTheme
 ```
 
 ### Local Docker notes
 
 The local instance needs PostgreSQL with `pg_trgm`, `hstore`, and `vector`, plus
-Redis. If you run the official `discourse/discourse` image yourself, use a
-`pgvector/pgvector:pg16` database image and let Discourse run its migrations.
-Do not mount an empty named volume over `/var/www/discourse/public/assets`; the
-image needs its precompiled assets to boot.
-
-## Structure
-
-```text
-about.json
-settings.yml
-locales/{en,pt_BR,es}.yml
-assets/                         bundled fonts, logo, grid tile
-common/common.scss              imports only
-stylesheets/
-  brand/                        fonts, color and size tokens
-  app/                          core UI islands, header, sidebar, topics
-  components/                   shared section, panel, skeleton styles
-  blocks/                       one stylesheet per block
-  layouts/                      homepage and outlet composition
-javascripts/discourse/
-  api-initializers/             one file per block outlet
-  blocks/                       @block components
-spec/system/                    homepage and category banner system specs
-```
+Redis. The official `discourse/discourse` image works with a
+`pgvector/pgvector:pg16` database; let Discourse run migrations. Do not mount an
+empty named volume over `/var/www/discourse/public/assets`.
 
 ## Accessibility
 
-- Text and button tokens meet WCAG AA in both schemes; the bright orange is not
-  used for small text on white.
-- The voxel scene and grid are decorative and are hidden from assistive
-  technology.
-- Focus styles are visible on links, cards, inputs, and buttons.
-- Motion (cube float, orbit, skeleton pulse) is disabled under
-  `prefers-reduced-motion`.
-- Layout responds to its container, so the two-column homepage and three-column
-  card grids collapse correctly when the Discourse sidebar is open.
-- All interactive cards are links with visible titles; decorative visual areas
-  are marked `aria-hidden`.
+- Body and muted text meet WCAG AA in both schemes; the filled button uses a
+  darker orange so white labels pass.
+- The homepage intro and list use real heading levels and a named list.
+- Loading uses a reserved-space skeleton; empty and error states are explicit.
+- Keyboard focus rings, selection, scrollbars, and reduced-motion behavior are
+  styled from the same palette.
+- Decorative grid and wordmark are CSS-only; the wordmark keeps the site title in
+  the accessibility tree.
 
 ## Notes
 
-- The header wordmark is a CSS mask of `assets/blokoto-logo-white.svg`, tinted by
-  the active color scheme. Replace that asset (and the hero logo reference) if
-  the brand mark changes.
-- The hero planet and cubes are pure CSS, so there is no image payload and they
-  remain crisp at any size.
-- The homepage hides Discourse's discovery sidebar while the custom homepage is
-  active. This is deliberate: the homepage is its own full-width composition.
+- Space Grotesk is a deliberate product/brand choice taken from the existing
+  Frontend. Impeccable's detector flags it as an overused font; the brand
+  commitment wins here.
+- The header wordmark is a color-scheme-tinted CSS mask of
+  `assets/blokoto-logo-white.svg`. Replace that asset if the mark changes.
+- Fresh installs show the latest list immediately; no tags or categories need to
+  be configured first.

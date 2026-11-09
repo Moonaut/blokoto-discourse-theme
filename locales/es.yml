@@ -1,79 +1,23 @@
 es:
   theme_metadata:
-    description: "Un tema con islas y cuadrícula para la comunidad de Blokoto. Superficies índigo profundas, acentos naranja cálidos, tipografía Space Grotesk y una página de inicio creada con bloques de tema."
+    description: "Un tema contenido para la comunidad de Blokoto: superficies índigo profundas, una cuadrícula de vóxeles sutil, acentos naranja cálidos y una página de inicio dedicada a llevar a los debates actuales."
     settings:
-      homepage_show_categories: "Muestra las islas de categorías destacadas en la página de inicio personalizada."
-      homepage_category_ids: "Categorías destacadas, en orden. Déjalo vacío para mostrar las categorías principales más activas."
-      homepage_category_count: "Número máximo de categorías visibles."
-      homepage_show_featured: "Muestra la sección de debates destacados cuando hay una etiqueta configurada."
-      homepage_featured_tag: "Etiqueta usada para crear las tarjetas destacadas. Solo se usa la primera."
-      homepage_featured_count: "Número de tarjetas de debates destacados."
-      homepage_latest_count: "Número de tarjetas de debates recientes."
-      homepage_show_links: "Muestra el panel de enlaces de la comunidad junto a los debates recientes."
-      homepage_cta_url: "Destino del botón de llamada a la acción de la página de inicio."
-      hero_primary_url: "Destino del botón principal del héroe."
-      hero_secondary_url: "Destino del enlace secundario del héroe."
-      category_banner_category_ids: "Categorías que reciben el banner de isla, incluidas sus subcategorías. Déjalo vacío para todas."
-      category_banner_show_description: "Muestra la descripción de la categoría en el banner de isla."
+      homepage_latest_count: "Número de debates recientes que se muestran en la página de inicio."
+      homepage_primary_url: "Destino de la acción principal de la página de inicio."
+      homepage_secondary_url: "Destino del enlace secundario de la página de inicio."
 
-  hero:
-    eyebrow: "La comunidad de Blokoto"
-    title: "Crea mundos. Compártelos. Juega en compañía."
-    subtitle: "Un lugar para que creadores y jugadores intercambien ideas, muestren lo que están construyendo y encuentren su próximo mundo."
-    primary: "Unirme a la comunidad"
-    secondary: "Ver lo más reciente"
-    logo_alt: "Blokoto"
-    feature_worlds: "Mundos"
-    feature_avatars: "Avatares"
-    feature_together: "Juntos"
-    features_aria: "Lo que puedes hacer aquí"
-
-  homepage:
-    categories:
-      eyebrow: "Elige una isla"
-      title: "Encuentra tu rincón"
-      subtitle: "Todo buen mundo empieza en algún lugar. Entra en el espacio que encaja con lo que estás creando."
-      all: "Todas las categorías"
-      topics:
-        one: "%{count} tema"
-        other: "%{count} temas"
-    featured:
-      eyebrow: "Selección de la comunidad"
-      title: "Vale la pena verlo"
-      subtitle: "Conversaciones a las que la comunidad siempre vuelve."
-      link: "Ver todos los destacados"
-    latest:
-      eyebrow: "Recién salido"
-      title: "Últimos debates"
-      subtitle: "Nuevas preguntas, nuevas creaciones, nuevas ideas. Toma asiento."
-      link: "Ver todo"
-    links:
-      title: "Empieza aquí"
-      icon: "compass"
-      guidelines: "Normas de la comunidad"
-      faq: "Preguntas frecuentes"
-      welcome: "Bienvenido a Blokoto"
-      discord: "Unirme a Discord"
-      support: "Contactar con soporte"
-    cta:
-      eyebrow: "Tu isla te espera"
-      title: "Crea algo con nosotros."
-      description: "Haz una pregunta, comparte una creación o simplemente saluda. La comunidad es mejor contigo."
-      button: "Crear una cuenta"
-    topic_grid:
-      read: "Leer debate"
-      posts: "publicaciones"
-      views: "visitas"
-      empty: "Todavía no hay debates. Empieza el primero."
-      load_error: "No se pudo cargar esta sección. Inténtalo de nuevo."
-      retry: "Reintentar"
-
-  category_banner:
-    eyebrow: "Isla de la categoría"
-    fallback_description: "Explora lo que la comunidad está construyendo aquí."
-    topics:
-      one: "%{count} tema"
-      other: "%{count} temas"
+  home:
+    title: "El sandbox online, juntos."
+    subtitle: "Crea mundos, compártelos y encuentra tu próxima idea en la comunidad de Blokoto."
+    primary: "Iniciar un debate"
+    secondary: "Ver categorías"
+    latest: "Últimos debates"
+    latest_link: "Ver todo"
+    replies: "respuestas"
+    empty: "Todavía no hay debates."
+    empty_action: "Empieza el primero"
+    load_error: "No se pudieron cargar los debates."
+    retry: "Reintentar"
 
   sidebar:
     home: "Inicio de la comunidad"

@@ -1,29 +1,30 @@
 .topic-list {
   overflow: hidden;
-  background: var(--t-Blokoto-color-background-surface);
-  border: 1px solid var(--t-Blokoto-color-border-default);
-  border-radius: var(--t-Blokoto-size-island-radius);
+  background: var(--t-Blokoto-color-surface);
+  border: 1px solid var(--t-Blokoto-color-border);
+  border-radius: var(--t-Blokoto-radius);
   border-collapse: separate;
   border-spacing: 0;
 
   thead {
-    background: var(--t-Blokoto-color-background-raised);
+    background: var(--t-Blokoto-color-raised);
   }
 
   th {
-    padding: var(--space-3);
-    color: var(--t-Blokoto-color-text-subtle);
-    font-family: var(--d-font-family--monospace);
-    font-size: var(--font-down-2);
-    font-weight: 700;
+    padding: var(--space-2) var(--space-3);
+    color: var(--t-Blokoto-color-subtle);
+    font-family: var(--font-family);
+    font-size: 0.6875rem;
+    font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    border-bottom: 1px solid var(--t-Blokoto-color-border-default);
+    border-bottom: 1px solid var(--t-Blokoto-color-border);
   }
 
   td {
     padding: var(--space-3);
-    border-top: 1px solid var(--t-Blokoto-color-border-default);
+    vertical-align: middle;
+    border-top: 1px solid var(--t-Blokoto-color-border);
   }
 
   tbody tr:first-child td {
@@ -31,10 +32,10 @@
   }
 
   .topic-list-item {
-    transition: background-color 150ms ease;
+    transition: background-color 140ms ease;
 
     &:hover {
-      background: var(--t-Blokoto-color-background-hover);
+      background: var(--t-Blokoto-color-raised);
     }
   }
 
@@ -44,52 +45,45 @@
 
   .main-link {
     .title {
-      color: var(--t-Blokoto-color-text-default);
+      color: var(--t-Blokoto-color-text);
       font-size: var(--d-topic-list-title-font-size);
       font-weight: 600;
-      line-height: 1.35;
+      line-height: 1.4;
       letter-spacing: -0.015em;
     }
 
     .topic-excerpt {
-      margin-top: var(--space-1);
-      color: var(--t-Blokoto-color-text-muted);
-      font-size: var(--font-down-1);
-      line-height: 1.5;
+      display: none;
     }
   }
 
   .topic-statuses .d-icon {
-    color: var(--t-Blokoto-color-text-subtle);
+    color: var(--t-Blokoto-color-subtle);
   }
 
-  .posters {
-    a .avatar {
-      border: 1px solid var(--t-Blokoto-color-border-default);
-    }
+  .posters a .avatar {
+    border: 1px solid var(--t-Blokoto-color-border);
   }
 
   .badge-category__wrapper .badge-category {
-    border-radius: 999px;
-    font-weight: 600;
+    border-radius: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 500;
   }
 
   .num.posts,
   .num.views,
   .num.age,
   .activity {
-    color: var(--t-Blokoto-color-text-muted);
+    color: var(--t-Blokoto-color-subtle);
+    font-size: var(--font-down-1);
     font-variant-numeric: tabular-nums;
-  }
-
-  .topic-list-data {
-    vertical-align: middle;
   }
 }
 
 .topic-list-bottom {
   margin-top: var(--space-4);
-  color: var(--t-Blokoto-color-text-muted);
+  color: var(--t-Blokoto-color-muted);
 }
 
 .topic-list-loading {
@@ -98,7 +92,7 @@
 
 @include viewport.until(md) {
   .topic-list {
-    border-radius: 0.9rem;
+    border-radius: 0.75rem;
 
     th,
     td {

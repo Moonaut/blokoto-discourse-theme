@@ -1,56 +1,13 @@
-homepage_show_categories:
-  default: true
-
-homepage_category_ids:
-  type: list
-  list_type: category
-  default: ""
-
-homepage_category_count:
-  type: integer
-  default: 6
-  min: 1
-  max: 12
-
-homepage_show_featured:
-  default: true
-
-homepage_featured_tag:
-  type: list
-  list_type: tag
-  default: ""
-
-homepage_featured_count:
-  type: integer
-  default: 3
-  min: 1
-  max: 6
-
 homepage_latest_count:
   type: integer
   default: 6
   min: 1
   max: 12
 
-homepage_show_links:
-  default: true
-
-homepage_cta_url:
-  default: "/signup"
+homepage_primary_url:
+  default: "/new-topic"
   type: string
 
-hero_primary_url:
-  default: "/signup"
+homepage_secondary_url:
+  default: "/categories"
   type: string
-
-hero_secondary_url:
-  default: "/latest"
-  type: string
-
-category_banner_category_ids:
-  type: list
-  list_type: category
-  default: ""
-
-category_banner_show_description:
-  default: true

@@ -1,11 +1,11 @@
 #main-outlet .footer {
-  margin-top: var(--space-6);
   padding-top: var(--space-4);
-  border-top: 1px solid var(--t-Blokoto-color-border-default);
+  margin-top: var(--space-6);
+  border-top: 1px solid var(--t-Blokoto-color-border);
 }
 
 .footer-content {
-  color: var(--t-Blokoto-color-text-subtle);
+  color: var(--t-Blokoto-color-subtle);
   font-size: var(--font-down-1);
 }
 

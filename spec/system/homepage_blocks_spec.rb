@@ -15,41 +15,43 @@ RSpec.describe "Blokoto homepage blocks" do
 
   before { sign_in(user) }
 
-  def update_setting(name, value)
-    theme.update_setting(name, value)
-    theme.save!
-  end
-
-  it "renders the hero, category islands, and latest discussion cards" do
+  it "renders one compact intro and a latest-discussion list" do
     visit("/")
 
-    expect(page).to have_css(".blokoto-hero__title", text: "Build worlds.")
-    expect(page).to have_css(".blokoto-hero__primary", text: "Join the community")
-    expect(page).to have_css(".blokoto-category-card", text: category.name)
-    expect(page).to have_css(".blokoto-topic-card", text: topic.title)
+    expect(page).to have_css(
+      ".blokoto-home__title",
+      text: "The online sandbox, together.",
+    )
+    expect(page).to have_css(".blokoto-home__topic-title", text: topic.title)
+    expect(page).to have_css(".blokoto-home__latest-title", text: "Latest discussions")
   end
 
-  it "shows featured discussions for the configured tag" do
-    SiteSetting.tagging_enabled = true
-    tag = Fabricate(:tag, name: "featured")
-    topic.tags = [tag]
-    topic.save!
-    update_setting(:homepage_featured_tag, "featured")
-
-    visit("/")
-
-    within(".homepage-blocks__block--featured") do
-      expect(page).to have_css(".blokoto-topic-card", text: topic.title)
-    end
-  end
-
-  it "renders the category banner on category pages" do
+  it "renders a plain category heading on category pages" do
     visit(category.url)
 
-    expect(page).to have_css(".blokoto-category-banner__name", text: category.name)
     expect(page).to have_css(
-      ".blokoto-category-banner__description",
+      ".blokoto-category-heading__title",
+      text: category.name,
+    )
+    expect(page).to have_css(
+      ".blokoto-category-heading__description",
       text: "Build together",
     )
+  end
+
+  it "respects the configured latest discussion count" do
+    theme.update_setting(:homepage_latest_count, 1)
+    theme.save!
+    3.times do |index|
+      Fabricate(
+        :topic_with_op,
+        title: "Another discussion #{index}",
+        category:,
+      )
+    end
+
+    visit("/")
+
+    expect(page).to have_css(".blokoto-home__topic", count: 1)
   end
 end
