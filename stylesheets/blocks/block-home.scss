@@ -29,7 +29,11 @@
 }
 
 .blokoto-home__intro {
+  box-sizing: border-box;
   display: grid;
+  width: 100%;
+  max-width: var(--t-Blokoto-content-width);
+  margin-inline: auto;
   grid-template-areas:
     "title actions"
     "subtitle actions";
@@ -92,7 +96,11 @@
 }
 
 .blokoto-home__latest {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--t-Blokoto-content-width);
   padding: 0 clamp(1.25rem, 4vw, 3.5rem) var(--space-2);
+  margin-inline: auto;
   border-top: 1px solid var(--t-Blokoto-color-border);
 }
 

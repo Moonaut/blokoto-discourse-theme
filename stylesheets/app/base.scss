@@ -60,7 +60,11 @@ body .welcome-banner {
   min-width: 0;
   min-height: 0;
   height: 100%;
-  padding: var(--space-5);
+  padding-block: var(--space-5);
+  padding-inline: max(
+    var(--space-5),
+    calc((100% - var(--t-Blokoto-content-width)) / 2)
+  );
   overflow-y: auto;
   overscroll-behavior: contain;
   background: var(--t-Blokoto-color-surface);

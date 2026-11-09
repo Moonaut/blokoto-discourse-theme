@@ -20,6 +20,9 @@ purpose: get people into current discussions.
   8px gap.
 - **Frontend corner language.** Every island uses a 12px radius, matching the
   Frontend's `rounded-xl` surfaces.
+- **Centered content inside the full-width shell.** The main island keeps its
+  full-width background and border; its content is capped at `80rem` and centered
+  with `margin-inline: auto`.
 - **The page never scrolls.** `html`/`body` are viewport-height and locked. The main
   island and the sidebar are independent scroll containers; the page chrome stays
   put.
@@ -73,6 +76,8 @@ homepage. The rest of the sidebar is Discourse's normal navigation.
   at 1919px the main island is 1903px wide.
 - `--t-Blokoto-radius` is `0.75rem` (12px) and is shared by the main island,
   homepage surface, sidebar, and topic list.
+- `--t-Blokoto-content-width` is `80rem`. Homepage intro/latest sections use it
+  directly; core pages get the same width through symmetric island padding.
 - `html`, `body`, and `#main-outlet-wrapper` are locked to `100dvh`; the body has
   `overflow: hidden`.
 - The main island is `overflow-y: auto`; the homepage uses the same rule on
