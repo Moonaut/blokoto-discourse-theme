@@ -24,7 +24,7 @@
   overscroll-behavior: contain;
   background: var(--t-Blokoto-color-surface);
   border: 1px solid var(--t-Blokoto-color-border);
-  border-radius: 1.25rem;
+  border-radius: var(--t-Blokoto-radius);
   scrollbar-gutter: stable;
 }
 

@@ -16,7 +16,10 @@ purpose: get people into current discussions.
 - **One homepage surface.** A compact introduction and a single latest-discussion
   list. No category grid, featured section, link panel, CTA card, or second feed.
 - **Full-width islands.** The main surface, sidebar, and header span the available
-  width. Every island uses the same 8px outer margin and 8px gap.
+  width with no `max-width` cap. Every island uses the same 8px outer margin and
+  8px gap.
+- **Frontend corner language.** Every island uses a 12px radius, matching the
+  Frontend's `rounded-xl` surfaces.
 - **The page never scrolls.** `html`/`body` are viewport-height and locked. The main
   island and the sidebar are independent scroll containers; the page chrome stays
   put.
@@ -66,6 +69,10 @@ homepage. The rest of the sidebar is Discourse's normal navigation.
 ## Layout rules
 
 - `--space-2` (8px) is the outer margin and the gap between every island.
+- `max-width` is removed from both `#main-outlet-wrapper` and the header `.wrap`;
+  at 1919px the main island is 1903px wide.
+- `--t-Blokoto-radius` is `0.75rem` (12px) and is shared by the main island,
+  homepage surface, sidebar, and topic list.
 - `html`, `body`, and `#main-outlet-wrapper` are locked to `100dvh`; the body has
   `overflow: hidden`.
 - The main island is `overflow-y: auto`; the homepage uses the same rule on
@@ -80,6 +87,8 @@ homepage. The rest of the sidebar is Discourse's normal navigation.
   one surface.
 - The sidebar and main content share the same width system and gap as the
   homepage.
+- Discourse's optional welcome banner is hidden; its title/search repeats the
+  header and the first discussion.
 
 ## Building on it
 

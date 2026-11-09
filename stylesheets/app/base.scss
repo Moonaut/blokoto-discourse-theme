@@ -37,6 +37,7 @@ body::before {
   gap: var(--space-2);
   align-items: stretch;
   width: 100%;
+  max-width: none;
   height: calc(100dvh - var(--t-Blokoto-header-height));
   min-height: 0;
   padding: var(--space-2);
@@ -45,6 +46,10 @@ body::before {
 
 #below-content,
 .powered-by-discourse {
+  display: none;
+}
+
+body .welcome-banner {
   display: none;
 }
 
