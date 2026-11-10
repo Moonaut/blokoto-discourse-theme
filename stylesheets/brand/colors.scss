@@ -1,18 +1,60 @@
 :root {
-  --t-Blokoto-color-canvas: light-dark(#f4f8ff, #050617);
-  --t-Blokoto-color-surface: light-dark(#fff, #0e1337);
-  --t-Blokoto-color-raised: light-dark(#f7fbff, #141a45);
-  --t-Blokoto-color-border: light-dark(#dce9ff, #1f2855);
-  --t-Blokoto-color-border-strong: light-dark(#b7d4ff, #2f3b76);
-  --t-Blokoto-color-text: light-dark(#03051b, #f5faff);
-  --t-Blokoto-color-muted: light-dark(#4d6bca, #b7d4ff);
-  --t-Blokoto-color-subtle: light-dark(#536fca, #7d9bf1);
-  --t-Blokoto-color-accent: light-dark(#ff4f00, #ff5a1f);
-  --t-Blokoto-color-text-accent: light-dark(#c43a00, #ff9a70);
-  --t-Blokoto-color-button: #c43a00;
-  --t-Blokoto-color-button-hover: #a93200;
-  --t-Blokoto-color-on-button: #fff8f3;
-  --t-Blokoto-color-grid: light-dark(#7d9bf1, #73eff7);
+  // Blokoto palette, mirrored from the Frontend's app.css.
+  --blokoto-50: #f5faff;
+  --blokoto-100: #ebf5ff;
+  --blokoto-200: #d4e8ff;
+  --blokoto-300: #b7d4ff;
+  --blokoto-400: #7d9bf1;
+  --blokoto-500: #4d6bca;
+  --blokoto-600: #374ba1;
+  --blokoto-700: #29397f;
+  --blokoto-800: #1a2354;
+  --blokoto-900: #0e1337;
+  --blokoto-950: #03051b;
+
+  // Frontend semantic tokens that are not part of the blue ramp.
+  --blokoto-primary-light: #f15624;
+  --blokoto-primary-dark: #ff4f00;
+  --blokoto-muted-light: #62748e;
+  --blokoto-accent-light: #f1f5f9;
+  --blokoto-border-light: #e2e8f0;
+  --blokoto-border-strong-light: #ced4dd;
+  --t-Blokoto-color-canvas: light-dark(var(--blokoto-50), var(--blokoto-950));
+  --t-Blokoto-color-surface: light-dark(#fff, var(--blokoto-900));
+  --t-Blokoto-color-raised: light-dark(
+    var(--blokoto-accent-light),
+    var(--blokoto-800)
+  );
+  --t-Blokoto-color-border: light-dark(
+    var(--blokoto-border-light),
+    var(--blokoto-800)
+  );
+  --t-Blokoto-color-border-strong: light-dark(
+    var(--blokoto-border-strong-light),
+    var(--blokoto-700)
+  );
+  --t-Blokoto-color-input-border: light-dark(
+    var(--blokoto-border-light),
+    var(--blokoto-700)
+  );
+  --t-Blokoto-color-text: light-dark(var(--blokoto-950), var(--blokoto-50));
+  --t-Blokoto-color-muted: light-dark(
+    var(--blokoto-muted-light),
+    color-mix(in srgb, var(--blokoto-50) 50%, var(--blokoto-800))
+  );
+  --t-Blokoto-color-subtle: var(--t-Blokoto-color-muted);
+  --t-Blokoto-color-accent: light-dark(
+    var(--blokoto-primary-light),
+    var(--blokoto-primary-dark)
+  );
+  --t-Blokoto-color-text-accent: var(--t-Blokoto-color-accent);
+  --t-Blokoto-color-button: var(--t-Blokoto-color-accent);
+  --t-Blokoto-color-button-hover: light-dark(
+    color-mix(in srgb, var(--blokoto-primary-light) 90%, #fff),
+    color-mix(in srgb, var(--blokoto-primary-dark) 90%, var(--blokoto-900))
+  );
+  --t-Blokoto-color-on-button: var(--blokoto-50);
+  --t-Blokoto-color-grid: light-dark(var(--blokoto-300), var(--blokoto-700));
   --t-Blokoto-header-height: 3.5rem;
   --t-Blokoto-content-width: 80rem;
   --t-Blokoto-radius: 0.75rem;

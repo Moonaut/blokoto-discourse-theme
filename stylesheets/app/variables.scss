@@ -7,17 +7,6 @@
   --d-button-border-radius: 0.5rem;
   --d-input-border-radius: 0.5rem;
   --d-sidebar-width: 16rem;
-  --d-sidebar-background: transparent;
-  --d-sidebar-border-color: transparent;
-  --d-sidebar-row-height: 2.25rem;
-  --d-sidebar-row-horizontal-padding: 0.625rem;
-  --d-sidebar-link-color: var(--t-Blokoto-color-muted);
-  --d-sidebar-link-icon-color: var(--t-Blokoto-color-subtle);
-  --d-sidebar-active-background: transparent;
-  --d-sidebar-active-color: var(--t-Blokoto-color-text-accent);
-  --d-sidebar-active-icon-color: var(--t-Blokoto-color-text-accent);
-  --d-sidebar-highlight-background: var(--t-Blokoto-color-raised);
-  --d-sidebar-highlight-color: var(--t-Blokoto-color-text);
   --d-content-background: transparent;
   --d-link-color: var(--t-Blokoto-color-text-accent);
   --d-header-icon-color: var(--t-Blokoto-color-muted);
@@ -25,7 +14,10 @@
   --d-header-icon-color--active: var(--t-Blokoto-color-text-accent);
   --d-header-icon-background--hover: var(--t-Blokoto-color-raised);
   --d-header-icon-background--active: var(--t-Blokoto-color-raised);
-  --d-header-padding-x: var(--space-3);
+
+  // The header content shares the islands' 8px outer margin, so the header
+  // keeps no padding of its own.
+  --d-header-padding-x: 0;
   --d-logo-height: 2.35rem;
   --d-topic-list-header-background-color: var(--t-Blokoto-color-raised);
   --d-topic-list-header-text-color: var(--t-Blokoto-color-subtle);
@@ -38,8 +30,45 @@
   --d-post-control-border-radius: 0.5rem;
   --d-input-bg-color: var(--t-Blokoto-color-raised);
   --d-input-text-color: var(--t-Blokoto-color-text);
-  --d-input-border: 1px solid var(--t-Blokoto-color-border);
+  --d-input-border: 1px solid var(--t-Blokoto-color-input-border);
   --secondary: var(--t-Blokoto-color-surface);
   --primary: var(--t-Blokoto-color-text);
   --tertiary: var(--t-Blokoto-color-accent);
+}
+
+// Discourse's Foundation theme experiment rewrites the sidebar tokens on the
+// body. Declaring them here instead of on :root keeps the Blokoto surface in
+// both the standard and experimental sidebars.
+body {
+  --d-sidebar-background: transparent;
+  --d-sidebar-border-color: transparent;
+  --d-sidebar-section-border-color: transparent;
+  --d-sidebar-row-height: 2.25rem;
+  --d-sidebar-row-horizontal-padding: 0.75rem;
+  --d-sidebar-vertical-gap: 0.25rem;
+  --d-sidebar-section-link-prefix-width: 1.25rem;
+  --d-sidebar-section-link-prefix-margin-right: 0.375rem;
+  --d-sidebar-section-link-icon-size: 1.25rem;
+  --d-sidebar-link-color: color-mix(
+    in srgb,
+    var(--t-Blokoto-color-text) 72%,
+    var(--t-Blokoto-color-muted)
+  );
+  --d-sidebar-link-icon-color: var(--t-Blokoto-color-muted);
+  --d-sidebar-header-color: var(--t-Blokoto-color-subtle);
+  --d-sidebar-header-icon-color: var(--t-Blokoto-color-muted);
+  --d-sidebar-active-background: color-mix(
+    in srgb,
+    var(--t-Blokoto-color-text) 12%,
+    transparent
+  );
+  --d-sidebar-active-color: var(--t-Blokoto-color-text);
+  --d-sidebar-active-icon-color: var(--t-Blokoto-color-accent);
+  --d-sidebar-highlight-background: color-mix(
+    in srgb,
+    var(--t-Blokoto-color-text) 5%,
+    transparent
+  );
+  --d-sidebar-highlight-color: var(--t-Blokoto-color-text);
+  --d-sidebar-footer-fade: var(--t-Blokoto-color-surface);
 }

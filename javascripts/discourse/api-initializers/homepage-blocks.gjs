@@ -16,6 +16,11 @@ export default apiInitializer((api) => {
         latestTitle: "home.latest",
         latestLinkLabel: "home.latest_link",
         count: settings.homepage_latest_count,
+        eventsCount: settings.homepage_events_count,
+        hotCount: settings.homepage_hot_count,
+        contributorsCount: settings.homepage_contributors_count,
+        blokreationsCategory: settings.homepage_blokreations_category,
+        blokreationsCount: settings.homepage_blokreations_count,
       },
     },
   ]);

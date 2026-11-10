@@ -2,7 +2,7 @@
   box-sizing: border-box;
   height: 100%;
   min-height: 0;
-  padding: var(--space-2);
+  padding: var(--space-2) 0;
   overflow-y: auto;
   overscroll-behavior: contain;
   background: var(--t-Blokoto-color-surface);
@@ -16,63 +16,212 @@
   background: transparent;
 }
 
-.sidebar-section {
-  border-bottom: 1px solid var(--t-Blokoto-color-border);
+.sidebar-container {
+  border-right: 0;
+}
 
-  &:last-child {
-    border-bottom: 0;
+.sidebar-wrapper .sidebar-sections {
+  padding: var(--space-1) 0;
+  gap: 0;
+
+  > * + * {
+    margin-top: var(--space-2);
   }
 }
 
-.sidebar-section-header {
-  padding: var(--space-2) var(--space-2) var(--space-1);
-  color: var(--t-Blokoto-color-subtle);
+.sidebar-blocks,
+.sidebar-blocks__container,
+.sidebar-blocks__layout {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-blocks + .sidebar-custom-sections {
+  margin-top: var(--space-1);
+}
+
+.sidebar-blocks .sidebar-section-link-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-custom-sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sidebar-section {
+  padding-block: 0;
+  border-bottom: 0;
+}
+
+// Categories are primary navigation in the header. Tags are not part of the
+// community navigation at all.
+.sidebar-section[data-section-name="categories"],
+.sidebar-section[data-section-name="tags"] {
+  display: none;
+}
+
+.sidebar-wrapper .sidebar-section-header-wrapper {
+  height: 1.75rem;
+  min-height: 1.75rem;
+  padding: 0 var(--space-2);
+  margin-inline: var(--space-3);
+  margin-bottom: var(--space-1);
+}
+
+.sidebar-section[data-section-name="chat-channels"] {
+  .sidebar-section-header-wrapper {
+    display: none;
+  }
+}
+
+// Unlabelled sections need a boundary because the section label that normally
+// carries the hierarchy is not there. Chat channels keep a header element in the
+// DOM but the theme hides it, so they are matched by name.
+.sidebar-section:not(:first-child):is(
+    :not(:has(.sidebar-section-header)),
+    [data-section-name="chat-channels"]
+  ) {
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--t-Blokoto-color-border);
+}
+
+.sidebar-wrapper .sidebar-section-header {
+  height: 1.75rem;
+  padding: 0;
+  color: var(--d-sidebar-header-color);
   font-family: var(--font-family);
   font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-}
-
-.sidebar-wrapper .sidebar-section-link {
-  min-height: 2.25rem;
-  margin-block: 1px;
-  color: var(--t-Blokoto-color-muted);
-  font-weight: 500;
-  border-radius: var(--t-Blokoto-radius-small);
 
   &:hover,
   &:focus-visible {
-    background: var(--t-Blokoto-color-raised);
     color: var(--t-Blokoto-color-text);
+    background: transparent;
+  }
+}
+
+.sidebar-wrapper .sidebar-section-header-caret {
+  justify-content: flex-start;
+  width: 1.25rem;
+
+  .d-icon {
+    color: inherit;
+    font-size: 0.75rem;
+  }
+}
+
+.sidebar-wrapper .sidebar-section-link-wrapper {
+  padding-inline: var(--space-3);
+}
+
+.sidebar-wrapper .sidebar-section-link {
+  min-height: var(--d-sidebar-row-height);
+  padding-inline: var(--space-2);
+  margin-block: 0;
+  color: var(--d-sidebar-link-color);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--t-Blokoto-radius-small);
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
+
+  .sidebar-section-link-prefix {
+    color: var(--d-sidebar-link-icon-color);
+    transition: color 120ms ease;
   }
 
-  &.active {
-    color: var(--t-Blokoto-color-text-accent);
-    font-weight: 600;
-    background: transparent;
+  .sidebar-section-link-prefix.icon > .d-icon {
+    width: var(--d-sidebar-section-link-icon-size);
+    height: var(--d-sidebar-section-link-icon-size);
+    font-size: var(--d-sidebar-section-link-icon-size);
+  }
 
-    .d-icon {
-      color: var(--t-Blokoto-color-text-accent);
+  &:hover,
+  &:focus-visible {
+    color: var(--d-sidebar-highlight-color);
+    background: var(--d-sidebar-highlight-background);
+
+    .sidebar-section-link-prefix {
+      color: var(--d-sidebar-highlight-color);
+    }
+  }
+
+  &.active,
+  &--active,
+  &.exact-url-match {
+    color: var(--d-sidebar-active-color);
+    font-weight: 600;
+    background: var(--d-sidebar-active-background);
+
+    .sidebar-section-link-prefix {
+      color: var(--d-sidebar-active-icon-color);
     }
 
-    &:hover {
-      background: var(--t-Blokoto-color-raised);
-      color: var(--t-Blokoto-color-text-accent);
+    .sidebar-section-link-prefix > .d-icon {
+      stroke-width: 2;
     }
   }
 }
 
-.sidebar-section-link-prefix {
-  color: var(--t-Blokoto-color-subtle);
+// "All categories", "All tags", and the navigation default are secondary
+// destinations, so they stay a step below the section rows.
+.sidebar-wrapper
+  .sidebar-section-link-wrapper:is(
+    [data-list-item-name="all-categories"],
+    [data-list-item-name="all-tags"],
+    [data-list-item-name*="configure-default-navigation-menu-"]
+  )
+  .sidebar-section-link {
+  font-size: 0.8125rem;
+
+  .sidebar-section-link-prefix.icon > .d-icon {
+    width: 1.125rem;
+    height: 1.125rem;
+    font-size: 1.125rem;
+  }
 }
 
 .sidebar-footer-wrapper {
+  padding-inline: var(--space-3);
   background: transparent;
 }
 
+.sidebar-footer-container {
+  padding: var(--space-2) 0 var(--space-1);
+}
+
 .sidebar-footer {
-  border-top-color: var(--t-Blokoto-color-border);
+  border-top: 0;
+}
+
+.sidebar-footer-wrapper .sidebar-footer-actions-button.btn {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  color: var(--d-sidebar-link-icon-color);
+  border-radius: var(--t-Blokoto-radius-small);
+
+  .d-icon {
+    color: inherit;
+    font-size: 1.125rem;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--t-Blokoto-color-text);
+    background: var(--d-sidebar-highlight-background);
+
+    .d-icon {
+      color: var(--t-Blokoto-color-text);
+    }
+  }
 }
 
 .sidebar-wrapper .badge-notification {

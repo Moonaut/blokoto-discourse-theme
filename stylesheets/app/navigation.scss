@@ -39,6 +39,12 @@
   gap: var(--space-2);
 }
 
+// Categories are primary navigation in the header, so the list-page category
+// picker only repeats a choice the user already made.
+.category-breadcrumb > li:has(.category-breadcrumb__category-selector) {
+  display: none;
+}
+
 .list-controls .combo-box .combo-box-header,
 .list-controls .select-kit .select-kit-header {
   background: var(--t-Blokoto-color-raised);

@@ -1,8 +1,13 @@
 en:
   theme_metadata:
-    description: "A restrained Blokoto community theme: deep indigo surfaces, a subtle voxel grid, warm orange accents, and a single purpose-built homepage for reaching current discussions."
+    description: "A restrained Blokoto community theme: deep indigo surfaces, a subtle voxel grid, warm orange accents, and a homepage that pairs current discussions with events, hot topics, and weekly contributors, plus a community Blokreations carousel."
     settings:
       homepage_latest_count: "Number of latest discussions shown on the homepage."
+      homepage_events_count: "Number of next events shown in the homepage rail."
+      homepage_hot_count: "Number of hot topics shown in the homepage rail."
+      homepage_contributors_count: "Number of weekly contributors shown in the homepage rail."
+      homepage_blokreations_category: "Category slug for the Blokreations carousel (use parent/child for subcategories; leave blank to hide)."
+      homepage_blokreations_count: "Number of Blokreations images shown in the carousel."
       homepage_primary_url: "Destination for the homepage's primary action."
       homepage_secondary_url: "Destination for the homepage's secondary link."
 
@@ -13,11 +18,55 @@ en:
     secondary: "Browse categories"
     latest: "Latest discussions"
     latest_link: "View all"
+    latest_link_aria: "View all latest discussions"
+    rail_label: "Community highlights"
+    view_all: "View all"
     replies: "replies"
     empty: "No discussions yet."
     empty_action: "Start the first one"
     load_error: "Couldn't load discussions."
     retry: "Try again"
 
+    events:
+      title: "Next events"
+      view_all: "View all events"
+      empty: "No events scheduled."
+      all_day: "All day"
+      now: "Happening now"
+      untitled: "Untitled event"
+      load_error: "Couldn't load events."
+
+    hot:
+      title: "Hot topics"
+      view_all: "View all hot topics"
+      empty: "Nothing hot yet."
+      load_error: "Couldn't load hot topics."
+      replies:
+        one: "%{count} reply"
+        other: "%{count} replies"
+
+    contributors:
+      title: "Best weekly contributors"
+      view_all: "View all weekly contributors"
+      empty: "No contributions this week."
+      empty_action: "Visit the directory"
+      load_error: "Couldn't load contributors."
+      contributions:
+        one: "%{count} contribution"
+        other: "%{count} contributions"
+
+    blokreations:
+      title: "Latest Blokreations"
+      view_all: "View all Blokreations"
+      carousel_label: "Latest Blokreations carousel"
+      prev: "Scroll Blokreations backward"
+      next: "Scroll Blokreations forward"
+      empty: "No Blokreations yet."
+      empty_action: "Share the first one"
+      load_error: "Couldn't load Blokreations."
+
+  category_nav:
+    label: "Categories"
+
   sidebar:
-    home: "Community home"
+    home: "Home"

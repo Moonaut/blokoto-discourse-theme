@@ -1,8 +1,13 @@
 pt_BR:
   theme_metadata:
-    description: "Um tema contido para a comunidade Blokoto: superfícies em índigo profundo, grade de voxels discreta, detalhes em laranja quente e uma página inicial dedicada a levar às discussões atuais."
+    description: "Um tema contido para a comunidade Blokoto: superfícies em índigo profundo, grade de voxels discreta, detalhes em laranja quente e uma página inicial que combina as discussões atuais com eventos, tópicos em alta, contribuidores da semana e um carrossel de Blokreations da comunidade."
     settings:
       homepage_latest_count: "Número de discussões recentes exibidas na página inicial."
+      homepage_events_count: "Número de próximos eventos exibidos na coluna lateral da página inicial."
+      homepage_hot_count: "Número de tópicos em alta exibidos na coluna lateral da página inicial."
+      homepage_contributors_count: "Número de contribuidores da semana exibidos na coluna lateral da página inicial."
+      homepage_blokreations_category: "Slug da categoria do carrossel de Blokreations (use pai/filha para subcategorias; deixe em branco para ocultar)."
+      homepage_blokreations_count: "Número de imagens de Blokreations exibidas no carrossel."
       homepage_primary_url: "Destino da ação principal da página inicial."
       homepage_secondary_url: "Destino do link secundário da página inicial."
 
@@ -13,11 +18,55 @@ pt_BR:
     secondary: "Ver categorias"
     latest: "Últimas discussões"
     latest_link: "Ver tudo"
+    latest_link_aria: "Ver todas as discussões recentes"
+    rail_label: "Destaques da comunidade"
+    view_all: "Ver tudo"
     replies: "respostas"
     empty: "Ainda não há discussões."
     empty_action: "Comece a primeira"
     load_error: "Não foi possível carregar as discussões."
     retry: "Tentar novamente"
 
+    events:
+      title: "Próximos eventos"
+      view_all: "Ver todos os eventos"
+      empty: "Nenhum evento agendado."
+      all_day: "O dia todo"
+      now: "Acontecendo agora"
+      untitled: "Evento sem título"
+      load_error: "Não foi possível carregar os eventos."
+
+    hot:
+      title: "Tópicos em alta"
+      view_all: "Ver todos os tópicos em alta"
+      empty: "Nada em alta ainda."
+      load_error: "Não foi possível carregar os tópicos em alta."
+      replies:
+        one: "%{count} resposta"
+        other: "%{count} respostas"
+
+    contributors:
+      title: "Melhores contribuidores da semana"
+      view_all: "Ver todos os contribuidores da semana"
+      empty: "Nenhuma contribuição esta semana."
+      empty_action: "Visitar o diretório"
+      load_error: "Não foi possível carregar os contribuidores."
+      contributions:
+        one: "%{count} contribuição"
+        other: "%{count} contribuições"
+
+    blokreations:
+      title: "Últimas Blokreations"
+      view_all: "Ver todas as Blokreations"
+      carousel_label: "Carrossel das últimas Blokreations"
+      prev: "Rolar as Blokreations para trás"
+      next: "Rolar as Blokreations para frente"
+      empty: "Ainda não há Blokreations."
+      empty_action: "Compartilhe a primeira"
+      load_error: "Não foi possível carregar as Blokreations."
+
+  category_nav:
+    label: "Categorias"
+
   sidebar:
-    home: "Início da comunidade"
+    home: "Início"

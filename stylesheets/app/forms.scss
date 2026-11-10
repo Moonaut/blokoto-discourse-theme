@@ -7,7 +7,7 @@ input[type="number"],
 textarea,
 select {
   background: var(--t-Blokoto-color-raised);
-  border: 1px solid var(--t-Blokoto-color-border);
+  border: 1px solid var(--t-Blokoto-color-input-border);
   border-radius: var(--d-input-border-radius);
   color: var(--t-Blokoto-color-text);
   transition:
@@ -36,20 +36,20 @@ select {
 
 .d-editor-container {
   overflow: hidden;
-  border: 1px solid var(--t-Blokoto-color-border);
+  border: 1px solid var(--t-Blokoto-color-input-border);
   border-radius: var(--t-Blokoto-radius);
 }
 
 .select-kit {
   .select-kit-header {
     background: var(--t-Blokoto-color-raised);
-    border: 1px solid var(--t-Blokoto-color-border);
+    border: 1px solid var(--t-Blokoto-color-input-border);
     border-radius: var(--t-Blokoto-radius-small);
   }
 
   .select-kit-body {
     background: var(--t-Blokoto-color-surface);
-    border: 1px solid var(--t-Blokoto-color-border);
+    border: 1px solid var(--t-Blokoto-color-input-border);
     border-radius: var(--t-Blokoto-radius);
     box-shadow: var(--shadow-menu-panel);
   }

@@ -101,6 +101,7 @@ export const ICON_MAP = Object.freeze({
   "discourse-compress": "minimize",
   "discourse-expand": "maximize",
   "discourse-other-tab": "grid-2x2",
+  "discourse-sidebar": "sidebar",
   "discourse-sparkles": "stars",
   "download": "download",
   "earth-americas": "earth",

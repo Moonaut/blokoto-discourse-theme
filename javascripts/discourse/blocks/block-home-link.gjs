@@ -28,13 +28,14 @@ export default class BlockHomeLink extends Component {
     >
       <li class="sidebar-section-link-wrapper">
         <a
+          aria-current={{if this.isHomepage "page"}}
           class="sidebar-section-link sidebar-row
             {{if this.isHomepage 'active'}}"
           href={{getURL "/"}}
         >
-          <span class="sidebar-section-link-prefix icon">{{dIcon
-              "house"
-            }}</span>
+          <span class="sidebar-section-link-prefix icon">
+            {{dIcon "house"}}
+          </span>
           <span class="sidebar-section-link-content-text">
             {{i18n (themePrefix @label)}}
           </span>

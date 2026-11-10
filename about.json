@@ -27,30 +27,30 @@
     "Blokoto Light": {
       "primary": "03051b",
       "secondary": "ffffff",
-      "tertiary": "ff4f00",
+      "tertiary": "f15624",
       "quaternary": "4d6bca",
-      "header_background": "f2f7ff",
+      "header_background": "f5faff",
       "header_primary": "03051b",
-      "highlight": "ffcd75",
-      "hover": "f5faff",
+      "highlight": "d4e8ff",
+      "hover": "f1f5f9",
       "selected": "ebf5ff",
-      "danger": "b13e53",
-      "success": "38b764",
-      "love": "b13e53"
+      "danger": "e7000b",
+      "success": "00bc7d",
+      "love": "e7000b"
     },
     "Blokoto Dark": {
       "primary": "f5faff",
       "secondary": "0e1337",
-      "tertiary": "ff5a1f",
-      "quaternary": "73eff7",
+      "tertiary": "ff4f00",
+      "quaternary": "7d9bf1",
       "header_background": "03051b",
       "header_primary": "f5faff",
-      "highlight": "ffcd75",
+      "highlight": "29397f",
       "hover": "1a2354",
-      "selected": "232e6a",
-      "danger": "e05d72",
-      "success": "6ee7a0",
-      "love": "e05d72"
+      "selected": "29397f",
+      "danger": "ff6467",
+      "success": "00bc7d",
+      "love": "ff6467"
     }
   }
 }

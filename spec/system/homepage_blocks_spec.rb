@@ -39,6 +39,65 @@ RSpec.describe "Blokoto homepage blocks" do
     )
   end
 
+  it "renders the community rail beside the latest discussions" do
+    visit("/")
+
+    expect(page).to have_css(".blokoto-home__main .blokoto-home__latest")
+    expect(page).to have_css(".blokoto-home__rail")
+
+    within(".blokoto-home__rail") do
+      expect(page).to have_css(".blokoto-rail__title", text: "Hot topics")
+      expect(page).to have_css(
+        ".blokoto-rail__title",
+        text: "Best weekly contributors",
+      )
+    end
+  end
+
+  it "hides the events block when the events feature is disabled" do
+    SiteSetting.discourse_events_enabled = false
+    SiteSetting.discourse_post_event_enabled = false
+
+    visit("/")
+
+    expect(page).not_to have_css(
+      ".blokoto-rail__title",
+      text: "Next events",
+    )
+  end
+
+  it "renders the Blokreations carousel for the configured category" do
+    theme.update_setting(:homepage_blokreations_category, category.slug)
+    theme.save!
+
+    upload = Fabricate(:image_upload)
+    blokreation = Fabricate(
+      :topic,
+      title: "Show off your first Blokreation",
+      category:,
+    )
+    Fabricate(:post, topic: blokreation, raw: "![A Blokreation](#{upload.url})")
+
+    visit("/")
+
+    expect(page).to have_css(".blokoto-home__blokreations")
+    expect(page).to have_css(
+      ".blokoto-blokreations__heading",
+      text: "Latest Blokreations",
+    )
+    expect(page).to have_css(".blokoto-blokreations__card", count: 1)
+    expect(page).to have_css(".blokoto-blokreations__card img")
+  end
+
+  it "hides the Blokreations section when no category is configured" do
+    theme.update_setting(:homepage_blokreations_category, "")
+    theme.save!
+
+    visit("/")
+
+    expect(page).not_to have_css(".blokoto-home__blokreations")
+  end
+
   it "respects the configured latest discussion count" do
     theme.update_setting(:homepage_latest_count, 1)
     theme.save!

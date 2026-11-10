@@ -266,6 +266,7 @@
   "discourse-compress": "minimize",
   "discourse-expand": "maximize",
   "discourse-other-tab": "grid-2x2",
+  "discourse-sidebar": "sidebar",
   "discourse-sparkles": "stars",
 
   "notification.assigned": "user-check",

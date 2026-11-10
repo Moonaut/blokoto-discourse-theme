@@ -4,6 +4,34 @@ homepage_latest_count:
   min: 1
   max: 12
 
+homepage_events_count:
+  type: integer
+  default: 3
+  min: 1
+  max: 6
+
+homepage_hot_count:
+  type: integer
+  default: 4
+  min: 1
+  max: 8
+
+homepage_contributors_count:
+  type: integer
+  default: 5
+  min: 1
+  max: 10
+
+homepage_blokreations_category:
+  type: string
+  default: "blokreations"
+
+homepage_blokreations_count:
+  type: integer
+  default: 8
+  min: 1
+  max: 16
+
 homepage_primary_url:
   default: "/new-topic"
   type: string

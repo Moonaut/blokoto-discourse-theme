@@ -40,7 +40,10 @@ body::before {
   max-width: none;
   height: calc(100dvh - var(--t-Blokoto-header-height));
   min-height: 0;
-  padding: var(--space-2);
+
+  // The navbar has no bottom margin, so the islands begin at its edge; the other
+  // three sides keep the shell's 8px margin.
+  padding: 0 var(--space-2) var(--space-2);
   overflow: hidden;
 }
 
@@ -106,16 +109,6 @@ body .welcome-banner {
 }
 
 body:has(.blokoto-home) {
-  #main-outlet-wrapper {
-    grid-template-areas: "content";
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: minmax(0, 1fr);
-  }
-
-  .sidebar-wrapper {
-    display: none;
-  }
-
   #main-outlet {
     display: flex;
     flex-direction: column;
@@ -159,6 +152,10 @@ h6 {
 }
 
 @include viewport.until(lg) {
+  // Core's `body.has-sidebar-page #main-outlet-wrapper` rule out-specifies the
+  // plain id selector, so repeat it here to actually collapse the sidebar grid
+  // at tablet widths (768–1023px).
+  body.has-sidebar-page #main-outlet-wrapper,
   #main-outlet-wrapper {
     grid-template-areas: "content";
     grid-template-columns: minmax(0, 1fr);
